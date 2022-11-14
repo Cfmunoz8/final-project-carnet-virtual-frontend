@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
 
-function NavbarProfessional() {
+function Navbar(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg sticky-top bg-light">
@@ -23,41 +22,37 @@ function NavbarProfessional() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link
-                className="nav-link"
-                aria-current="page"
-                to={"/patient-list"}
-              >
-                Pacientes
+              <Link className="nav-link" aria-current="page" to={props.link1}>
+                {props.item1}
               </Link>
-              <Link className="nav-link" to={"/"}>
-                Ficha
+              <Link className="nav-link" to={props.link2}>
+                {props.item2}
               </Link>
-              <Link className="nav-link" to={"/"}>
-                Nueva Atención
+              <Link className="nav-link" to={props.link3}>
+                {props.item3}
               </Link>
             </div>
           </div>
           <div className="dropdown">
-            Bienvenido, {"nombre profesional "}
+            Bienvenido, {"nombre apellido. "}
             <button
               type="button"
               className="btn btn-secondary dropdown-toggle"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <CgProfile />
+              {props.dropdown}
             </button>
             <ul className="dropdown-menu dropdown-menu-end">
               <li>
-                <a className="dropdown-item" href="">
-                  Mi perfil
-                </a>
+                <Link className="dropdown-item" to={props.dropdownLink1}>
+                  {props.dropdownItem1}
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item" href="">
-                  Cerrar Sesión
-                </a>
+                <Link className="dropdown-item" to={props.dropdownLink2}>
+                  {props.dropdownItem2}
+                </Link>
               </li>
             </ul>
           </div>
@@ -67,4 +62,4 @@ function NavbarProfessional() {
   );
 }
 
-export default NavbarProfessional;
+export default Navbar;
