@@ -8,6 +8,7 @@ function NewControl() {
     <div className="patient-list">
       <Header />
       <NavbarProfessional />
+      
     </div>
   );
 }
