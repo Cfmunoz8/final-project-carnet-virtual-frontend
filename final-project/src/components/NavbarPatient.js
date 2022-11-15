@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import Navbar from "./Navbar";
 import { CgProfile } from "react-icons/cg";
 
-function NavbarProfessional() {
+function NavbarPatient() {
   return (
     <div className="navbar-professional">
       <Navbar
-        item1="Pacientes"
-        link1="/patient-list"
-        item2="Ficha"
+        item1="Resumen y Controles"
+        link1="/"
+        item2="Antecedentes Ficha Clínica"
         link2="/"
-        item3="Nueva Atención"
-        link3="/new-control"
+        item3="Medicamentos"
+        link3="/"
         dropdown= {<CgProfile />}
         dropdownItem1 = "Mi Perfil"
         dropdownLink1 = "/"
@@ -22,4 +22,4 @@ function NavbarProfessional() {
   );
 }
 
-export default NavbarProfessional;
+export default NavbarPatient;
