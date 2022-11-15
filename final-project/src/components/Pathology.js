@@ -1,70 +1,27 @@
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 
-//get
-//put
-function Pathology() {
 
-  const [Items, setItems] = useState("");
-  const [list, setList] = useState([]);
-
-
+function Pathology(props) {
   return (
-    <div className="contaner container fluid bg-light pb-3 mt-3"
-      style={{ width: "560px" }}>
-
-      <div className="text-center">
-        <h1>
-          TodoList
-        </h1>
-      </div>
-      <div className="card" style={{ width: "537px" }}>
-        <form
-          onSubmit={(send) => {
-            send.preventDefault();
-          }}>
-
-
-          <div className="card-header row">
-            <input
-              className="col-8"
-              type="text"
-              placeholder="Escribe aquí"
-              onChange={(event) => setItems(event.target.value)}
-            ></input>
-            <button
+    <div className="containe-fluid">
+      <div className="card" style={{ width: "18rem" }}>
+        <div className="card-header">
+          {props.name}
+        </div>
+        <ul className="list-group list-group-flush">
+          <input className="" type="text" placeholder="escribe aqui">
+          </input>
+          <button
               className="btn btn-dark ml-3 col-4"
               style={{ width: "150px" }}
-              value="add Item"
-              onClick={() => {
-                setList(list.concat(`${Items}`));
-                //fetch put
-              }}
-            >Agregar Tarea</button>
-          </div>
-          <ul className="list-group list-group-flush">
-            {list.map((tarea) => (
-              <li className="list-group-item">
-                {tarea}
-                <button
-                  type="button"
-                  className="btn-close float-end"
-                  aria-label="Close"
-                  onClick={() =>
-                    setList(list.filter((item) => item !== `${tarea}`))
-                  }
-                ></button>
-
-              </li>
-            ))}
-          </ul>
-        </form>
-
+              onClick >Guardar</button>
+        </ul>
       </div>
-
-    </div >
-
+    </div>
   )
+
 }
 
 export default Pathology;
+
