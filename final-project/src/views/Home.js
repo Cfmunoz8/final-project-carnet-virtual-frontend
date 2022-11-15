@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 function Home() {
   return (
-    <div className="Home">
+    <div className="home">
       <h1>soy el home</h1>
     </div>
   );
