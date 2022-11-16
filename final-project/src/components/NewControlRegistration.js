@@ -3,7 +3,7 @@ import DatePickers from "./DatePicker";
 
 function NewControlRegistration() {
   return (
-    <div className="container container-fluid p-5 bg-light mt-5">
+    <div className="container container-fluid p-5 bg-light mt-5 mb-5">
       <form>
         <div className="row">
           <h1>Nueva Atención</h1>
@@ -30,7 +30,7 @@ function NewControlRegistration() {
                 <option value="1">Visita domiciliaria integral</option>
                 <option value="2">Visita de seguimiento</option>
                 <option value="3">Control cardiovascular</option>
-                <option value="4">Control de morbilidad</option>
+                <option value="4">Consulta de morbilidad</option>
                 <option value="5">Kinesiología motora</option>
                 <option value="6">Kinesiología respiratoria</option>
                 <option value="7">
@@ -38,8 +38,17 @@ function NewControlRegistration() {
                 </option>
                 <option value="8">Curación de herida</option>
                 <option value="9">Otros procedimientos de enfermería</option>
-                <option value="9">
-                  Otros procedimientos de otros profesionales
+                <option value="10">
+                  Consulta o control nutricional
+                </option>
+                <option value="10">
+                  Consulta o control odontológico
+                </option>
+                <option value="11">
+                  Consulta o control de salud mental
+                </option>
+                <option value="12">
+                  Otros procedimientos o motivos de consulta
                 </option>
               </select>
             </div>

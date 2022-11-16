@@ -10,6 +10,7 @@ function NewControl() {
       <Header />
       <NavbarProfessional />
       <NewControlRegistration />
+
     </div>
   );
 }
