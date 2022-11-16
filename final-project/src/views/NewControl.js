@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Header from "../components/Header";
 import NavbarProfessional from "../components/NavbarProfessional";
+import NewControlRegistration from "../components/NewControlRegistration";
 
 
 function NewControl() {
@@ -8,7 +9,7 @@ function NewControl() {
     <div className="patient-list">
       <Header />
       <NavbarProfessional />
-      
+      <NewControlRegistration />
     </div>
   );
 }
