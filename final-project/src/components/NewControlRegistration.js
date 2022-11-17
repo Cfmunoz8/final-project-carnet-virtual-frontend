@@ -3,7 +3,7 @@ import DatePickers from "./DatePicker";
 
 function NewControlRegistration() {
   return (
-    <div className="container container-fluid p-5 bg-light mt-5 mb-5">
+    <div className="container container-fluid p-5 bg-light mb-5 ml-5 mt-5">
       <form>
         <div className="row">
           <h1>Nueva Atención</h1>
