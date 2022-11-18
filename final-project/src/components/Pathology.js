@@ -4,24 +4,57 @@ import React, { useState } from "react";
 
 function Pathology(props) {
   return (
-    <div className="containe-fluid">
-      <div className="card" style={{ width: "18rem" }}>
-        <div className="card-header">
-          {props.name}
+    <div className="row">
+        <div className="col-6 mb-3">
+          <label for="exampleFormControlTextarea1" className="form-label">
+            Patologias:
+          </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+          <button type="button" className="btn btn-info">Info</button>
         </div>
-        <ul className="list-group list-group-flush">
-          <input className="" type="text" placeholder="escribe aqui">
-          </input>
-          <button
-              className="btn btn-dark ml-3 col-4"
-              style={{ width: "150px" }}
-              onClick >Guardar</button>
-        </ul>
+        <div className="col-6 mb-3">
+          <label for="exampleFormControlTextarea1" className="form-label">
+            Cirugias:
+          </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+          <button type="button" className="btn btn-info">Info</button>
+        </div>
+        <div className="col-6 mb-3">
+          <label for="exampleFormControlTextarea1" className="form-label">
+            Alergias:
+          </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+          <button type="button" className="btn btn-info">Info</button>
+        </div>
+        <div className="col-6 mb-3">
+          <label for="exampleFormControlTextarea1" className="form-label">
+            Habitos:
+          </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+          <button type="button" className="btn btn-info">Info</button>
+        </div>
       </div>
-    </div>
-  )
 
+      
+  )
 }
 
 export default Pathology;
+
 
