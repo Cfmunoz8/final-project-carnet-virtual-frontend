@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 function Pathology(props) {
   return (
+    <div className="container container-fluid mt-5 p-5 bg-light">
     <div className="row">
         <div className="col-6 mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
@@ -14,7 +15,7 @@ function Pathology(props) {
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
-          <button type="button" className="btn btn-info">Info</button>
+          <button type="button" className="btn btn-info">Guardar</button>
         </div>
         <div className="col-6 mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
@@ -25,7 +26,7 @@ function Pathology(props) {
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
-          <button type="button" className="btn btn-info">Info</button>
+          <button type="button" className="btn btn-info">Guardar</button>
         </div>
         <div className="col-6 mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
@@ -36,7 +37,7 @@ function Pathology(props) {
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
-          <button type="button" className="btn btn-info">Info</button>
+          <button type="button" className="btn btn-info">Guardar</button>
         </div>
         <div className="col-6 mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
@@ -47,11 +48,11 @@ function Pathology(props) {
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
-          <button type="button" className="btn btn-info">Info</button>
+          <button type="button" className="btn btn-info">Guardar</button>
         </div>
       </div>
 
-      
+      </div>
   )
 }
 
