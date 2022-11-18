@@ -14,3 +14,4 @@ function PatientListProfessional() {
 }
 
 export default PatientListProfessional;
+
