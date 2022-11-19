@@ -3,7 +3,7 @@ import DatePickers from "./DatePicker";
 
 function NewControlRegistration() {
   return (
-    <div className="container container-fluid p-5 bg-light mb-5 ml-5 mt-5">
+    <div className="container container-fluid p-5 bg-light m-5">
       <form>
         <div className="row">
           <h1>Nueva Atención</h1>
@@ -70,7 +70,7 @@ function NewControlRegistration() {
             <textarea
               className="form-control"
               id="exampleFormControlTextarea1"
-              rows="5"
+              rows="6"
             ></textarea>
           </div>
           <div className="col-6 mb-3">
@@ -80,7 +80,7 @@ function NewControlRegistration() {
             <textarea
               className="form-control"
               id="exampleFormControlTextarea1"
-              rows="5"
+              rows="6"
             ></textarea>
           </div>
         </div>
