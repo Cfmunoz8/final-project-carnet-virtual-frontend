@@ -5,6 +5,8 @@ import Home from "./views/Home";
 import File from "./views/File";
 import PatientListProfessional from "./views/PatientListProfessional";
 import NewControl from "./views/NewControl";
+import LoginView from "./views/LoginView";
+import RegistrationView from "./views/RegistrationView";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/pathology" element={<File />} />
         <Route path="/patient-list" element={<PatientListProfessional />} />
         <Route path="/new-control" element={<NewControl />} />
+        <Route path="/LoginView" element={<LoginView />} />
+        <Route path="/RegistrationView" element={<RegistrationView />} />
       </Routes>
     </BrowserRouter>
   );
