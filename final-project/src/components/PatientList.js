@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { Context } from "../store/context";
 import { BiSearchAlt } from "react-icons/bi";
 
 function PatientList() {
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getPatients();
+  }, []);
+
   return (
     <div className="container container-fluid">
       <div
@@ -65,49 +71,50 @@ function PatientList() {
       <div className="card">
         <div className="card-header">Pacientes</div>
         <ul className="list-group list-group-flush list-group-numbered">
-          <li className="list-group-item d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">Pedro Fernández</div>
-              <div className="fw-bold">Rut</div>
-            </div>
-            <div>
-              <div>
-                <span className="badge bg-primary rounded-pill">
-                  Fecha de último control:{"date"}
-                </span>
-              </div>
-              <div>
-                <span
-                  className="badge bg-success rounded-pill"
-                  type="button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  {"vivo"}
-                </span>
-              </div>
-            </div>
-          </li>
-          <li className="list-group-item d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">Arturo Lopez</div>
-              <div className="fw-bold">Rut</div>
-            </div>
-            <div>
-              <div>
-                <span className="badge bg-primary rounded-pill">
-                  Fecha de último control:{"date"}
-                </span>
-              </div>
-              <div>
-                <span
-                  className="badge bg-danger rounded-pill"
-                >
-                  {"fallecido"}
-                </span>
-              </div>
-            </div>
-          </li>
+          {store.patients?.map((item) => {
+            console.log(item)
+            return (
+              <li
+                key={item.id}
+                className="list-group-item d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">
+                    {item.name} {item.lastname}
+                  </div>
+                  <div className="fw-bold">{item.rut}</div>
+                </div>
+                <div>
+                  <div>
+                    <span className="badge bg-primary rounded-pill">
+                      Fecha de último control:{"date"}
+                    </span>
+                  </div>
+                  <div>
+                    {
+                      (item.alive == true && (
+                        <span
+                          className="badge bg-success rounded-pill"
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          {"vivo"}
+                        </span>
+                      ))
+                    }
+                    {
+                      (item.alive == false && (
+                        <span className="badge bg-danger rounded-pill">
+                          {"fallecido"}
+                        </span>
+                      ))
+                    }
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
