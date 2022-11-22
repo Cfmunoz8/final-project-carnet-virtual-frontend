@@ -5,12 +5,15 @@ import Home from "./views/Home";
 import File from "./views/File";
 import PatientListProfessional from "./views/PatientListProfessional";
 import NewControl from "./views/NewControl";
+import RegistrationForm from "./components/Registration";
+import  Form  from "./components/Registration"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/form-registration" element={<Form/>} />
         <Route path="/pathology" element={<File />} />
         <Route path="/patient-list" element={<PatientListProfessional />} />
         <Route path="/new-control" element={<NewControl />} />

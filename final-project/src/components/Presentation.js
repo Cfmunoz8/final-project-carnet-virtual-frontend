@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUserNurse } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Presentation() {
     return (
@@ -18,7 +19,7 @@ function Presentation() {
                     <div class="d-grid gap-2 pt-5">
                         <button className="btn btn-info btn-lg p-3" type="button">Ingresar</button>
                         <button type="button" className="btn btn-link pt-3">¿Olvidaste tu contraseña?</button>
-                        <button className="btn  btn-outline-secondary" type="button">Registrate aqui</button>
+                        <Link className="btn  btn-outline-secondary" to={"/form-registration"}  type="button">Registrate aqui</Link>
 
                     </div>
                 </div>

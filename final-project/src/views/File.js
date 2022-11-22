@@ -7,7 +7,7 @@ import ProfileView from "../components/ProfileView";
 
 function File() {
   return (
-      <div className="conianer-fuid">
+      <div className="container-fuid">
        <Header />
       <NavbarProfessional /> 
       <div className="row">
