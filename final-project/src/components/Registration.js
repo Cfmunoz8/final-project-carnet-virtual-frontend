@@ -5,11 +5,10 @@ import { FaUserAlt } from "react-icons/fa";
 function RegistrationForm() {
     return (
         <div className="p-5">
-            <div className="row mt-5">
+            <div className="">
                 <div className="col-lg-4 bg-white m-auto">
                     <h2 className="text-center pt-3">Registrate</h2>
                     <span className="text-center text-muted lead">Crea tu cuenta</span>
-                    {/* Form start */}
                     <form id="form" action="#" className="">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><FaUserAlt /></span>
