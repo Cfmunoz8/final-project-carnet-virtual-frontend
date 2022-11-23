@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
+import Header from "../components/Header";
+import Presentation from "../components/Presentation";
+
+
 
 function Home() {
   return (
-    <div className="home">
-      <h1>soy el home</h1>
+    <div className=" ">
+     <Header />
+     <Presentation />
     </div>
   );
 }
