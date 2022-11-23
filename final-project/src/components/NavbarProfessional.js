@@ -9,9 +9,9 @@ function NavbarProfessional() {
         item1="Pacientes"
         link1="/patient-list"
         item2="Ficha"
-        link2="/"
+        link2="/pathology"
         item3="Nueva Atención"
-        link3="/Pathology"
+        link3="/new-control"
         dropdown= {<CgProfile />}
         dropdownItem1 = "Mi Perfil"
         dropdownLink1 = "/"
