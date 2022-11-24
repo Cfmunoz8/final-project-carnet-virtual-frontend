@@ -6,6 +6,9 @@ function NavbarPresentation() {
         <div>
         <nav className="navbar navbar-expand-lg sticky-top bg-light">
           <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
+            Home
+          </Link>
             <button
               className="navbar-toggler"
               type="button"

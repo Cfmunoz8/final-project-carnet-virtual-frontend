@@ -19,7 +19,7 @@ function Login() {
                     <div class="d-grid gap-2 pt-5">
                         <button className="btn btn-info btn-lg p-3" type="button">Ingresar</button>
                         <button type="button" className="btn btn-link pt-3">¿Olvidaste tu contraseña?</button>
-                        <Link className="btn  btn-outline-secondary" to={"/"} type="button">Registrate aqui</Link>
+                        <Link className="btn  btn-outline-secondary" to={"/registration-professional"} type="button">Registrate aqui</Link>
 
                     </div>
                 </div>
