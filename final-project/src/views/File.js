@@ -4,26 +4,23 @@ import Pathology from "../components/Pathology";
 import Header from "../components/Header";
 import NavbarProfessional from "../components/NavbarProfessional";
 import ProfileView from "../components/ProfileView";
+import ScrollClinicalRecord from "../components/ScrollClinicalRecord";
 
 function File() {
   return (
-      <div className="container-fuid">
-       <Header />
-      <NavbarProfessional /> 
+    <div className="container-fuid">
+      <Header />
+      <NavbarProfessional />
       <div className="row">
-      <div className="col-3">
-      <ProfileView />
+        <div className="col-3">
+          <ProfileView />
+        </div>
+        <div className="container fluid col-8">
+          <ScrollClinicalRecord />
+        </div>
       </div>
-      <div className="container fluid col-8">
-      <Pathology />
-      </div>
-      </div>
-      </div>
-      
+    </div>
   );
 }
-
- 
-
 
 export default File;

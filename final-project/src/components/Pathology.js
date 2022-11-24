@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 function Pathology(props) {
   return (
-    <div className="container container-fluid mt-5 p-5 bg-light">
+    <div className="container container-fluid mt-3 mb-3 p-3 bg-light">
     <div className="row">
         <div className="col-6 mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">
