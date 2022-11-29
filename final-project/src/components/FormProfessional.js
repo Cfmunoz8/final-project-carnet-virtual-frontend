@@ -22,7 +22,7 @@ function FormProfessional() {
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Rut</span>
-                            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+                            <input type="number" class="form-control" placeholder="Rut" aria-label="number" aria-describedby="basic-addon1" />
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Email</span>
