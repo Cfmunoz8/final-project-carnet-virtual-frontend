@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import DatePickers from "./DatePicker";
+import { Context } from "../store/context";
 
 function NewControlRegistration() {
+  const { store, actions } = useContext(Context);
   return (
     <div className="container container-fluid p-5 bg-light m-5">
       <form>
