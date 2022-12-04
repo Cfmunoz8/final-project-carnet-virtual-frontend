@@ -6,7 +6,7 @@ import NavbarPatient from "./NavbarPatient";
 function DrugList() {
   const { store, actions } = useContext(Context);
   useEffect(() => {
-    actions.getPatients();
+    actions.getDrugs();
   }, []);
   return (
     <div className="container container-fluid bg-light mt-5 mb-5">
@@ -27,8 +27,7 @@ function DrugList() {
           <div className="card">
             <div className="card-header">Medicamentos</div>
             <ul className="list-group list-group-flush list-group-numbered">
-              {store.patients?.map((item) => {
-                console.log(item);
+              {store.drugs?.map((item) => {
                 return (
                   <li
                     key={item.id}
@@ -36,9 +35,8 @@ function DrugList() {
                   >
                     <div className="ms-2 me-auto">
                       <div className="fw-bold">
-                        {item.name} {item.lastname}
+                        {item.name} - {item.posology}
                       </div>
-                      <div className="fw-bold">{item.rut}</div>
                     </div>
                   </li>
                 );
