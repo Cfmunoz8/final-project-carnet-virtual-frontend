@@ -10,7 +10,7 @@ import ProfileView from "./components/ProfileView";
 import FormR from "./views/FormR";
 import ProfessionalLogin from "./views/ProfessionalLogin";
 import RegistrationProfessional from "./views/RegistrationProfessional";
-
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
         <Route path="/new-control" element={<NewControl />} />
         <Route path="/professional-login" element={<ProfessionalLogin />} />
         <Route path="/registration-professional" element={<RegistrationProfessional />} />
+        <Route path="/map" element={<Map/>} />
       </Routes>
     </BrowserRouter>
   );

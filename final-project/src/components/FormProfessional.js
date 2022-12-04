@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 
+
 function FormProfessional() {
+
+    const [Items, setItems] = useState("");
+    const [list, setList] = useState([]);
+
     return (
         <div className="p-5">
             <div className="">
                 <div className="col-lg-4 bg-white m-auto">
                     <h2 className="text-center pt-3">Registrate</h2>
                     <span className="text-center text-muted lead">Crea tu cuenta</span>
-                    <form id="form" action="#" className="">
+                    <form id="form" action="#" className="" onSubmit={(send) => {
+                        send.preventDefault();
+                    }}>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><FaUserAlt /></span>
                             <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" />
@@ -69,11 +76,14 @@ function FormProfessional() {
                                 </div>
                             </div>
                         </div>
-                        <button className="btn btn-primary my-5"> Registrate </button>
+                        <button className="btn btn-primary my-5" value="add Item"
+                            onClick={() => {
+                                setList(list.concat(`${Items}`));
+                            }}> Registrate </button>
                     </form>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 };
