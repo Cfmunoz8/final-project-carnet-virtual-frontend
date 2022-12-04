@@ -5,13 +5,14 @@ export const getState = ({ getActions, getStore, setStore }) => {
       caregivers: [],
       clinicalRecords: [],
       drugs: [],
+      patient: {},
     },
     actions: {
       loginPatient: (info, navigate) => {
-        console.log("info", info)
+        console.log("info", info);
         const postLogin = {
           method: "POST",
-          body: JSON.stringify( info ),
+          body: JSON.stringify(info),
           headers: {
             "Content-Type": "application/json",
           },
@@ -22,12 +23,12 @@ export const getState = ({ getActions, getStore, setStore }) => {
         )
           .then((res) => res.json())
           .then((result) => {
-            if(result.msg!="contraseña o rut invalido"){
-              localStorage.setItem("dataLogin", JSON.stringify(result))
+            if (result.msg != "contraseña o rut invalido") {
+              localStorage.setItem("dataLogin", JSON.stringify(result));
             }
-            
-            if(localStorage.getItem("dataLogin")){
-              navigate("/patient-home")
+
+            if (localStorage.getItem("dataLogin")) {
+              navigate("/patient-home");
             }
           })
           .catch((error) => console.error("Error:", error));
@@ -40,9 +41,17 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .then((response) => response.json())
           .then((data) => {
             setStore({ patients: data });
-            ;
           });
       },
+
+      getPatient: (id) => {
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/patient/"+id)
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ patient: data });
+          });
+      },
+
       updatePatientAlive: (id) => {
         const putMethod = {
           method: "PUT",
