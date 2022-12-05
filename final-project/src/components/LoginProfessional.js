@@ -9,19 +9,19 @@ import { Context } from "../store/context";
 function Login() {
 
     const { store, actions } = useContext(Context);
-    const [infoLoginProfessional, setInfoLoginProfessional] = useState();
+    const [infoLogin, setInfoLogin] = useState();
     let navigate = useNavigate();
     const onChange = (e) => {
         console.log({ [e.target.name]: e.target.value })
-        setInfoLoginProfessional({ ...infoLoginProfessional, [e.target.name]: e.target.value })
+        setInfoLogin({ ...infoLogin, [e.target.name]: e.target.value })
     }
-    useEffect(() => {console.log("useffect",infoLoginProfessional)
+    useEffect(() => {console.log("useffect",infoLogin)
 
-    }, [infoLoginProfessional])
+    }, [infoLogin])
     const submitForm = (e) => {
         e.preventDefault()
 
-        actions.loginProfessional(infoLoginProfessional, navigate)
+        actions.loginProfessional(infoLogin, navigate)
     }
 
 
@@ -37,8 +37,8 @@ function Login() {
                         <input type="rut" name="rut" className="form-control" id="exampleFormControlInput1" placeholder="RUT" onChange={(e) => onChange(e)}/>
                     </div>
                     <div className="mb-3">
-                        <label for="exampleFormControlInput1" className="form-label">Ingresa tu contraseña</label>
-                        <input type="password" name="password" className="form-control" id="exampleFormControlInput1" placeholder="Contraseña" onChange={(e) => onChange(e)}/>
+                        <label for="exampleFormControlInput2" className="form-label">Ingresa tu contraseña</label>
+                        <input type="password" name="password" className="form-control" id="exampleFormControlInput2" placeholder="Contraseña" onChange={(e) => onChange(e)}/>
                         <div class="d-grid gap-2 pt-5">
                             <button className="btn btn-info btn-lg p-3" type="submit">Ingresar</button>
                             <button type="button" className="btn btn-link pt-3">¿Olvidaste tu contraseña?</button>
