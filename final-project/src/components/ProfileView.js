@@ -3,10 +3,13 @@ import { Context } from "../store/context";
 
 function ProfileView() {
   const { store, actions } = useContext(Context);
-  const id = store.patients.id
-  useEffect(() => {
-    actions.getPatient(id);
-  }, []);
+  const info = store.patient
+  console.log ("info", info)
+
+  useEffect (()=>{
+    actions.getClinicalRecord()
+  },[])
+
   return (
     <div>
       <div className="card text-bg-light m-5" style={{ width: "18rem" }}>
@@ -18,7 +21,7 @@ function ProfileView() {
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">Fecha de ingreso: </li>
-          <li className="list-group-item">Índice de Barthel: </li>
+          <li className="list-group-item">Índice de Barthel: {store.clinicalRecords.barthel_index}</li>
           <li className="list-group-item"> Cuidador: </li>
           <li className="list-group-item">Dirección: </li>
         </ul>

@@ -1,3 +1,5 @@
+import { BiEraser } from "react-icons/bi";
+
 export const getState = ({ getActions, getStore, setStore }) => {
   return {
     store: {
@@ -24,10 +26,11 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .then((res) => res.json())
           .then((result) => {
             if (result.msg != "contraseña o rut invalido") {
-              localStorage.setItem("dataLogin", JSON.stringify(result));
+              setStore({patient: result.data})
+              localStorage.setItem("acess_token", result.acess_token);
             }
 
-            if (localStorage.getItem("dataLogin")) {
+            if (localStorage.getItem("acess_token")) {
               navigate("/patient-home");
             }
           })
@@ -41,14 +44,6 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .then((response) => response.json())
           .then((data) => {
             setStore({ patients: data });
-          });
-      },
-
-      getPatient: (id) => {
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/patient/"+id)
-          .then((response) => response.json())
-          .then((data) => {
-            setStore({ patient: data });
           });
       },
 
@@ -79,6 +74,21 @@ export const getState = ({ getActions, getStore, setStore }) => {
             setStore({ drugs: data });
           });
       },
+      getClinicalRecord: () => {
+        const token = localStorage.getItem("acess_token")
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+ token
+          },
+        }
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/get_clinical_record", method)
+        .then((response) => response.json())
+        .then((data) => {
+          setStore({ clinicalRecords: data });
+        });
+      }
     },
   };
 };
