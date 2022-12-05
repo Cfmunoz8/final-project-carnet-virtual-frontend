@@ -44,11 +44,11 @@ const submitForm = (e) => { e.preventDefault()
                 </form>
             </div>
             <div className=" text-center col-4 p-5">
-                <h2>What is Lorem Ipsum?
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</h2>
+                <h1 className="mb-4 mt-5">Bienvenido/a a tu carnet virtual, ficha médica de salud.</h1>
+                <h2>Esta plataforma es de fácil uso y amigable para que puedas tener acceso a tus antecedentes clínicos en todo lugar y en todo momento. Por medio de este medio, te invitamos a olvidar la libreta de comunicaciones y dar un paso a las nuevas tecnologías.</h2>
             </div>
             <div className=" m-5 col-4">
-                <img src="https://c8.alamy.com/compes/2bgj7k6/juego-de-personajes-de-dibujos-animados-de-personas-mayores-pareja-mayor-enamorada-icono-de-diseno-plano-aislar-en-la-ilustracion-blanca-2bgj7k6.jpg" className="img-fluid" alt="..." />
+                <img src="https://nosmagazine.cl/wp-content/uploads/2018/12/postrados-1.jpg" className=" img img-fluid m-5" alt="..." />
             </div>
         </div>
     );
