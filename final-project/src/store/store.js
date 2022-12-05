@@ -14,7 +14,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       alergies: [],
       habits: [],
       professionals: [],
-  
+      pathologys: [],
     },
       actions: {
        loginPatient: (info, navigate) => {
