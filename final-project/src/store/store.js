@@ -14,7 +14,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       alergies: [],
       habits: [],
       professionals: [],
-      pathologys: [],
+  
     },
       actions: {
        loginPatient: (info, navigate) => {
@@ -78,7 +78,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-cfmunoz8-finalprojectca-gxssvq1sc5o.ws-us77.gitpod.io/login_professional",
+          "https:///8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/login_professional",
           postLogin
         )
           .then((res) => res.json())
