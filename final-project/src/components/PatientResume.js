@@ -12,7 +12,7 @@ function PatientResume(props) {
         </div>
         <div className="row mb-3">
           <div className="col-6">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "28rem" }}>
               <div className="card-header">{props.div1}</div>
               <div className="card-body list-group list-group-flush">
                 <li className="list-group-item">{props.text1}</li>
@@ -20,7 +20,7 @@ function PatientResume(props) {
             </div>
           </div>
           <div className="col-6">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "28rem" }}>
               <div className="card-header">{props.div2}</div>
               <div className="card-body list-group list-group-flush">
                 <li className="list-group-item">{props.text2}</li>
@@ -30,7 +30,7 @@ function PatientResume(props) {
         </div>
         <div className="row">
           <div className="col-6 mb-3">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "28rem" }}>
               <div className="card-header">{props.div3}</div>
               <div className="card-body list-group list-group-flush">
                 <li className="list-group-item">{props.text3}</li>
@@ -38,7 +38,7 @@ function PatientResume(props) {
             </div>
           </div>
           <div className="col-6 mb-3">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "28rem" }}>
               <div className="card-header">{props.div4}</div>
               <div className="card-body list-group list-group-flush">
                 <li className="list-group-item">{props.text4}</li>
