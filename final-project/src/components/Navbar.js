@@ -34,7 +34,7 @@ function Navbar(props) {
             </div>
           </div>
           <div className="dropdown">
-            Bienvenido, {"nombre apellido. "}
+            {props.header}
             <button
               type="button"
               className="btn btn-secondary dropdown-toggle"
