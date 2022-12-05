@@ -12,6 +12,7 @@ function NavbarProfessional() {
         link2="/pathology"
         item3="Nueva Atención"
         link3="/new-control"
+        header= "Bienvenido, nombre apellido"
         dropdown= {<CgProfile />}
         dropdownItem1 = "Mi Perfil"
         dropdownLink1 = "/"

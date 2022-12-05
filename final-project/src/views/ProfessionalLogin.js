@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import Header from "../components/Header";
-import Presentation from "../components/Presentation";
+import Login from "../components/LoginProfessional";
 import NavbarPresentation from "../components/NavbarPresentation";
 
-function Home() {
+function ProfessionalLogin() {
   return (
     <div className=" ">
      <Header />
-     <NavbarPresentation />
-     <Presentation />
+     <NavbarPresentation/>
+     <Login />
     </div>
   );
 }
 
-export default Home;
+export default ProfessionalLogin;
