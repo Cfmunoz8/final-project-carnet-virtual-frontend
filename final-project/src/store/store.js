@@ -9,6 +9,10 @@ export const getState = ({ getActions, getStore, setStore }) => {
       drugs: [],
       patient: [],
       controls: [],
+      pathologies: [],
+      surgeries: [],
+      alergies: [],
+      habits: [],
     },
     actions: {
       loginPatient: (info, navigate) => {
@@ -129,6 +133,71 @@ export const getState = ({ getActions, getStore, setStore }) => {
         .then((data) => {
           console.log( data )
           setStore({ controls: data });
+        });
+      },
+
+      getPathologies: () => {
+        const token = localStorage.getItem("access_token")
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+ token
+          },
+        }
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/pathologies", method)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log( data )
+          setStore({ pathologies: data });
+        });
+      },
+
+      getSurgeries: () => {
+        const token = localStorage.getItem("access_token")
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+ token
+          },
+        }
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/surgeries", method)
+        .then((response) => response.json())
+        .then((data) => {
+          setStore({ surgeries: data });
+        });
+      },
+
+      getHabits: () => {
+        const token = localStorage.getItem("access_token")
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+ token
+          },
+        }
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/habits", method)
+        .then((response) => response.json())
+        .then((data) => {
+          setStore({ habits: data });
+        });
+      },
+
+      getAlergies: () => {
+        const token = localStorage.getItem("access_token")
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer "+ token
+          },
+        }
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/alergies", method)
+        .then((response) => response.json())
+        .then((data) => {
+          setStore({ alergies: data });
         });
       }
     },

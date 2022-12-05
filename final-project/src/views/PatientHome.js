@@ -29,7 +29,7 @@ function PatientHome() {
     <div>
       <Header />
       <Navbar
-        header="Bienvenido, nombre apellido"
+        header="Bienvenido/a,"
         dropdown={<CgProfile />}
         dropdownItem1="Mi Perfil"
         dropdownLink1="/"

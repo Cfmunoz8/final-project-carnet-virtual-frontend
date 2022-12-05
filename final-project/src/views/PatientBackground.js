@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Context } from "../store/context";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
@@ -7,11 +7,19 @@ import PatientResume from "../components/PatientResume";
 import { CgProfile } from "react-icons/cg";
 
 function PatientBackground() {
+  const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getPathologies()
+    actions.getSurgeries();
+    actions.getAlergies();
+    actions.getHabits();
+  }, []);
   return (
     <div>
       <Header />
       <Navbar
-        header="Bienvenido, nombre apellido"
+        header="Bienvenido/a,"
         dropdown={<CgProfile />}
         dropdownItem1="Mi Perfil"
         dropdownLink1="/"
@@ -23,15 +31,56 @@ function PatientBackground() {
           <ProfileView />
         </div>
         <div className="col-9">
-          <PatientResume h1="Antecedentes"
-                    div1="Patologías"
-                    text1="text 1"
-                    div2="Cirugías"
-                    text2="text 2"
-                    div3="Alergias"
-                    text3="text 3"
-                    div4="Hábitos"
-                    text4="text 4"
+          <PatientResume
+            h1="Antecedentes"
+            div1="Patologías"
+            text1={
+              <ul className="list-group list-group-flush ">
+                {store.pathologies?.map((item) => {
+                  return (
+                    <li key={item.id} className="list-group-item">
+                      {item.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            }
+            div2="Cirugías"
+            text2={
+              <ul className="list-group list-group-flush ">
+                {store.surgeries?.map((item) => {
+                  return (
+                    <li key={item.id} className="list-group-item">
+                      {item.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            }
+            div3="Alergias"
+            text3={
+              <ul className="list-group list-group-flush ">
+                {store.alergies?.map((item) => {
+                  return (
+                    <li key={item.id} className="list-group-item">
+                      {item.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            }
+            div4="Hábitos"
+            text4={
+              <ul className="list-group list-group-flush ">
+                {store.habits?.map((item) => {
+                  return (
+                    <li key={item.id} className="list-group-item">
+                      {item.name}
+                    </li>
+                  );
+                })}
+              </ul>
+            }
           />
         </div>
       </div>
