@@ -1,60 +1,48 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/context";
 
+function Pathology() {
 
-function Pathology(props) {
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getPathology();
+  }, []);
+  const submitForm = (e) => {
+    e.preventDefault()}
+
   return (
-    <div className="container container-fluid mt-3 mb-3 p-3 bg-light">
-    <div className="row">
+    <div className="container container-fluid mt-5 p-5 bg-light">
+      <div className="row">
         <div className="col-6 mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
-            Patologias:
-          </label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-          <button type="button" className="btn btn-info">Guardar</button>
-        </div>
-        <div className="col-6 mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
-            Cirugias:
-          </label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-          <button type="button" className="btn btn-info">Guardar</button>
-        </div>
-        <div className="col-6 mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
-            Alergias:
-          </label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-          <button type="button" className="btn btn-info">Guardar</button>
-        </div>
-        <div className="col-6 mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
-            Habitos:
-          </label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-          <button type="button" className="btn btn-info">Guardar</button>
+          <form onSubmit={submitForm}>
+            <input
+              className="form-control me-2"
+              type="input"
+              placeholder="Escriba la patologia"
+              aria-label=""
+            />
+            <button className="btn btn-outline-secondary" type="submit">Guardar</button>
+          </form>
+          <div className="card">
+            <div className="card-header">Patologias</div>
+            <ul className="list-group list-group-flush list-group-numbered">
+              {store.Pathology?.map((item) => {
+                return (
+                  <li
+                    key={item.id}
+                    className="list-group-item d-flex justify-content-between align-items-start"
+                  ></li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
-
-      </div>
+    </div>
   )
 }
+
 
 export default Pathology;
 
