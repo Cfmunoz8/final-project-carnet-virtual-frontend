@@ -3,6 +3,7 @@ import { FaUserNurse } from "react-icons/fa";
 import { Link , useNavigate } from "react-router-dom";
 import { Context } from "../store/context";
 
+
 function Presentation() {
 
 const { store, actions } = useContext(Context);
@@ -30,6 +31,7 @@ const submitForm = (e) => { e.preventDefault()
                         <label for="exampleFormControlInput1" className="form-label">Ingresa tu rut:</label>
                         <input type="rut" name="rut" className="form-control" id="exampleFormControlInput1" placeholder="RUT" onChange={(e) => onChange(e)}/>
                     </div>
+                
                     <div className="mb-3">
                         <label for="exampleFormControlInput2" className="form-label">Ingresa tu contraseña:</label>
                         <input type="password" name="password" className="form-control" id="exampleFormControlInput2" placeholder="Contraseña" onChange={(e) => onChange(e)}/>
@@ -46,11 +48,9 @@ const submitForm = (e) => { e.preventDefault()
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</h2>
             </div>
             <div className=" m-5 col-4">
-            <img src="https://c8.alamy.com/compes/2bgj7k6/juego-de-personajes-de-dibujos-animados-de-personas-mayores-pareja-mayor-enamorada-icono-de-diseno-plano-aislar-en-la-ilustracion-blanca-2bgj7k6.jpg" className="img-fluid" alt="..."/>
+                <img src="https://c8.alamy.com/compes/2bgj7k6/juego-de-personajes-de-dibujos-animados-de-personas-mayores-pareja-mayor-enamorada-icono-de-diseno-plano-aislar-en-la-ilustracion-blanca-2bgj7k6.jpg" className="img-fluid" alt="..." />
             </div>
         </div>
-
-
     );
 }
 

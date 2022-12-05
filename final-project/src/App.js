@@ -8,6 +8,9 @@ import NewControl from "./views/NewControl";
 import RegistrationForm from "./components/Registration";
 import ProfileView from "./components/ProfileView";
 import FormR from "./views/FormR";
+import ProfessionalLogin from "./views/ProfessionalLogin";
+import RegistrationProfessional from "./views/RegistrationProfessional";
+import Map from "./components/Map";
 import PatientHome from "./views/PatientHome";
 import PatientBackground from "./views/PatientBackground";
 import PatientDrugs from "./views/PatientDrugs"
@@ -22,6 +25,9 @@ function App() {
         <Route path="/pathology" element={<File />} />
         <Route path="/patient-list" element={<PatientListProfessional />} />
         <Route path="/new-control" element={<NewControl />} />
+        <Route path="/professional-login" element={<ProfessionalLogin />} />
+        <Route path="/registration-professional" element={<RegistrationProfessional />} />
+        <Route path="/map" element={<Map/>} />
         <Route path="/patient-home" element={<PatientHome/>}/>
         <Route path="/background" element={<PatientBackground/>}/>
         <Route path="/drugs" element={<PatientDrugs/>}/>
