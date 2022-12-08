@@ -13,17 +13,6 @@ function DrugList() {
       <NavbarPatient />
       <div className="row">
         <div className="col-8">
-          <form className="d-flex pt-2 pb-2" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Busque por nombre del medicamento"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-secondary" type="submit">
-              <BiSearchAlt />
-            </button>
-          </form>
           <div className="card">
             <div className="card-header">Medicamentos</div>
             <ul className="list-group list-group-flush list-group-numbered">

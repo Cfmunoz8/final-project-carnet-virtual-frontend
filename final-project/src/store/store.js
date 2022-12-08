@@ -1,4 +1,3 @@
-import { BiEraser } from "react-icons/bi";
 
 export const getState = ({ getActions, getStore, setStore }) => {
   return {
@@ -27,7 +26,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/login_patient",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/login_patient",
           postLogin
         )
           .then((res) => res.json())
@@ -46,7 +45,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
 
       getPathology: () => {
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/pathology"
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/pathology"
         )
           .then((response) => response.json())
           .then((data) => {
@@ -63,7 +62,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/add_pathology", addPathology)
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_pathology", addPathology)
           .then((res) => res.json())
           .then((result) => setStore({ Pathology: result }))
       },
@@ -78,7 +77,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/login_professional",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/login_professional",
           postLogin
         )
           .then((res) => res.json())
@@ -105,7 +104,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/patient_list", getMethod
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/patient_list", getMethod
         )
           .then((response) => response.json())
           .then((data) => {
@@ -122,7 +121,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/update_patient_alive/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/update_patient_alive/" +
             id,
           putMethod
         )
@@ -141,7 +140,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         }
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/drugs", method
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/drugs", method
         )
           .then((response) => response.json())
           .then((data) => {
@@ -157,7 +156,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/get_clinical_record", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_clinical_record", method)
         .then((response) => response.json())
         .then((data) => {
           setStore({ clinicalRecord: data });
@@ -173,7 +172,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/get_caregiver", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver", method)
         .then((response) => response.json())
         .then((data) => {
           setStore({ caregiver: data });
@@ -189,7 +188,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/get_controls", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_controls", method)
         .then((response) => response.json())
         .then((data) => {
           console.log( data )
@@ -206,7 +205,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/pathologies", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/pathologies", method)
         .then((response) => response.json())
         .then((data) => {
           console.log( data )
@@ -223,7 +222,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/surgeries", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/surgeries", method)
         .then((response) => response.json())
         .then((data) => {
           setStore({ surgeries: data });
@@ -239,7 +238,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/habits", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/habits", method)
         .then((response) => response.json())
         .then((data) => {
           setStore({ habits: data });
@@ -255,7 +254,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Authorization": "Bearer "+ token
           },
         }
-        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/alergies", method)
+        fetch("https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/alergies", method)
         .then((response) => response.json())
         .then((data) => {
           setStore({ alergies: data });
@@ -274,7 +273,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/create_drug/",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/create_drug/",
           postMethod
         )
           .then((res) => res.json())
