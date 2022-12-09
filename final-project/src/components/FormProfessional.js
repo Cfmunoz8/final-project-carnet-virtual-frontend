@@ -80,7 +80,7 @@ function FormProfessional() {
                                    
                                 </div>
                             </div>
-                            <button className="btn btn-primary my-5" value="add Item" type="submit"> Registrate </button>
+                            <button className="btn btn-primary my-5" value="add Item" type="submit" > Registrate </button>
                         </form>
                     </div>
                 </div>
