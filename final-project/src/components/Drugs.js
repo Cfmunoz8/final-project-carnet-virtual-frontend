@@ -64,9 +64,9 @@ function Drugs() {
               }}
             />
           </div>
-          <button type="submit" className="btn btn-info">
-            Guardar
-          </button>
+          <button type="submit" className="btn btn-outline-secondary">
+              Agregar
+            </button>
         </form>
       </div>
     </div>

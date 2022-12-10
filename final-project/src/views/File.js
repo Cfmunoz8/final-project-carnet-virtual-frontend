@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import NavbarProfessional from "../components/NavbarProfessional";
 import ProfileView from "../components/ProfileView";
 import ScrollClinicalRecord from "../components/ScrollClinicalRecord";
+import ProfileViewFromProfessional from "../components/ProfileViewFromProfessional";
 
 function File() {
   return (
@@ -13,7 +14,7 @@ function File() {
       <NavbarProfessional />
       <div className="row">
         <div className="col-3">
-          <ProfileView />
+          <ProfileViewFromProfessional />
         </div>
         <div className="container fluid col-8">
           <ScrollClinicalRecord />

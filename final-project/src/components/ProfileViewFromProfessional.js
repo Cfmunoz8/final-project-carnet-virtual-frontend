@@ -1,13 +1,18 @@
 import React, { useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/context";
 
-function ProfileView() {
+
+function ProfileViewFromProfessional() {
   const { store, actions } = useContext(Context);
+  const { id } = useParams();
 
   useEffect(() => {
-    actions.getClinicalRecord();
-    actions.getCaregiver();
+    actions.getPatientById(id);
+    actions.getClinicalRecordById(id);
+    actions.getCaregiverById(id);
   }, []);
+  console.log(store.caregiver)
 
   return (
     <div>
@@ -54,4 +59,4 @@ function ProfileView() {
   );
 }
 
-export default ProfileView;
+export default ProfileViewFromProfessional;
