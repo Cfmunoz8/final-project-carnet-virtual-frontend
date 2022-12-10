@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import { CgProfile } from "react-icons/cg";
 
 function NavbarProfessional() {
+
+
   return (
     <div className="navbar-professional">
       <Navbar

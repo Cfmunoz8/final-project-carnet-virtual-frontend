@@ -2,9 +2,12 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
+import swal from "sweetalert";
 
 
 function RegistrationForm() {
+
+    const alerta = () =>(swal("Paciente creado exitosamente"))
 
     const { store, actions } = useContext(Context);
     const [infoPatient, setInfoPatient] = useState();
@@ -95,7 +98,7 @@ function RegistrationForm() {
 
                             </div>
                         </div>
-                        <button className="btn btn-primary my-5" type="submit"> Registrate </button>
+                        <button className="btn btn-primary my-5" type="submit" onClick={()=>alerta()}> Registrate </button>
                     </form>
                 </div>
             </div>

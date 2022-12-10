@@ -12,7 +12,7 @@ function Login() {
     const [infoLogin, setInfoLogin] = useState();
     let navigate = useNavigate();
     const onChange = (e) => {
-        console.log({ [e.target.name]: e.target.value })
+       
         setInfoLogin({ ...infoLogin, [e.target.name]: e.target.value })
     }
     useEffect(() => {console.log("useffect",infoLogin)

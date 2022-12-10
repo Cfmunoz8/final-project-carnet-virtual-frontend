@@ -2,8 +2,11 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
+import swal from "sweetalert";
 
 function FormProfessional() {
+
+    const alerta = () =>(swal("Profesional creado exitosamente"))
 
     const { store, actions } = useContext(Context);
     const [infoRegister, setInfoRegister] = useState();
@@ -80,7 +83,9 @@ function FormProfessional() {
                                    
                                 </div>
                             </div>
-                            <button className="btn btn-primary my-5" value="add Item" type="submit" > Registrate </button>
+
+                            
+                            <button className="btn btn-primary my-5" value="add Item" type="submit"  onClick={()=>alerta()} > Registrate </button>
                         </form>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/login_patient",
+          "https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/login_patient",
           postLogin
         )
           .then((res) => res.json())
@@ -42,6 +42,12 @@ export const getState = ({ getActions, getStore, setStore }) => {
             }
           })
           .catch((error) => console.error("Error:", error));
+      },
+      
+      logout: (navigate) => {
+        localStorage.removeItem("access_token")
+        navigate("/")
+
       },
 
       getPathology: () => {
@@ -69,7 +75,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       },
 
       loginProfessional: (info, navigate) => {
-        console.log("info", info)
+       
         const postLogin = {
           method: "POST",
           body: JSON.stringify(info),
@@ -78,7 +84,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-wwz2lyas2xk.ws-us77.gitpod.io/login_professional",
+          "https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/login_professional",
           postLogin
         )
           .then((res) => res.json())
@@ -105,7 +111,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us77.gitpod.io/patient_list", getMethod
+          "https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/patient_list", getMethod
         )
           .then((response) => response.json())
           .then((data) => {
