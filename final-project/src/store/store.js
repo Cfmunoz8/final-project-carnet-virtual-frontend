@@ -1,4 +1,3 @@
-
 export const getState = ({ getActions, getStore, setStore }) => {
   return {
     store: {
@@ -156,7 +155,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
             setStore({ drugs: data });
           });
       },
-      
+
       getClinicalRecord: () => {
         const token = localStorage.getItem("access_token");
         const method = {
@@ -374,7 +373,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver_by_id/"+id,
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver_by_id/" +
+            id,
           method
         )
           .then((response) => response.json())
@@ -393,7 +393,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_pathology_by_id/"+clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_pathology_by_id/" +
+            clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -412,7 +413,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_surgery_by_id/"+clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_surgery_by_id/" +
+            clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -421,6 +423,65 @@ export const getState = ({ getActions, getStore, setStore }) => {
           });
       },
 
+      getAlergyById: (clinical_record_id) => {
+        const token = localStorage.getItem("access_token");
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_alergy_by_id/" +
+            clinical_record_id,
+          method
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ alergy: data });
+          });
+      },
+
+      getHabitById: (clinical_record_id) => {
+        const token = localStorage.getItem("access_token");
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_habit_by_id/" +
+            clinical_record_id,
+          method
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ habit: data });
+          });
+      },
+
+      getDrugById: (clinical_record_id) => {
+        const token = localStorage.getItem("access_token");
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_drug_by_id/" +
+            clinical_record_id,
+          method
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ drug: data });
+          });
+      },
     },
   };
 };

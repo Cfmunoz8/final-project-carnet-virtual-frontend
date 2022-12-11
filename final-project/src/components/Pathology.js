@@ -11,7 +11,8 @@ function Pathology() {
   useEffect(() => {
     actions.getPathologyById(id);
     actions.getSurgeryById(id);
-    console.log("pathology", store.pathology)
+    actions.getAlergyById(id);
+    actions.getHabitById(id);
     actions.getPathologies();
     actions.getSurgeries();
     actions.getAlergies();
@@ -83,7 +84,7 @@ function Pathology() {
             <div className="card-header">Alergias</div>
             {
               <ul className="card-body list-group list-group-flush ">
-                {store.alergies?.map((item) => {
+                {store.alergy?.map((item) => {
                   return (
                     <li key={item.id} className="list-group-item">
                       {item.name}
@@ -109,7 +110,7 @@ function Pathology() {
             <div className="card-header">Hábitos</div>
             {
               <ul className="card-body list-group list-group-flush ">
-                {store.habits?.map((item) => {
+                {store.habit?.map((item) => {
                   return (
                     <li key={item.id} className="list-group-item">
                       {item.name}

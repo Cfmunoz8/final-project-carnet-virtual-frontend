@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/context";
+import { useParams } from "react-router-dom";
 
 function Drugs() {
   const { store, actions } = useContext(Context);
   const [drugsAndPosology, setDrugsAndPosology] = useState();
+  const { id } = useParams();
 
   useEffect(() => {
-    actions.getDrugs();
+    actions.getDrugById(id);
   }, []);
 
   const onChange = (e) => {
@@ -25,7 +27,7 @@ function Drugs() {
           <div className="card">
             <div className="card-header">Medicamentos</div>
             <ul className="list-group list-group-flush list-group-numbered">
-              {store.drugs?.map((item) => {
+              {store.drug?.map((item) => {
                 return (
                   <li
                     key={item.id}
