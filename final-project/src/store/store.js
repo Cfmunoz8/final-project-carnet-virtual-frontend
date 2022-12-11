@@ -422,13 +422,15 @@ export const getState = ({ getActions, getStore, setStore }) => {
         const addNewPatient = {
           method: "POST",
           body: JSON.stringify(data),
-          fetch(
+          headers: {
+            "Content-Type": "application/json",
            },
         };
+      fetch(
           "https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/add_patient", addNewPatient)
           .then((res) => res.json())
           .then((result) => setStore({ patients: result }))
-      }
+      },
           
        getClinicalRecordById: (id) => {
         const token = localStorage.getItem("access_token");
