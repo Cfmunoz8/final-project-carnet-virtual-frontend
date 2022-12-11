@@ -16,8 +16,10 @@ import PatientBackground from "./views/PatientBackground";
 import PatientDrugs from "./views/PatientDrugs"
 
 
+
 function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +35,7 @@ function App() {
         <Route path="/drugs" element={<PatientDrugs/>}/>
       </Routes>
     </BrowserRouter>
+  
   );
 }
 

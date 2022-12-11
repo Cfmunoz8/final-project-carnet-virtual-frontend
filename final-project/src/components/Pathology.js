@@ -12,6 +12,7 @@ function Pathology() {
     e.preventDefault()}
 
   return (
+   
     <div className="container container-fluid mt-5 p-5 bg-light">
       <div className="row">
         <div className="col-6 mb-3">
@@ -40,6 +41,7 @@ function Pathology() {
         </div>
       </div>
     </div>
+  
   )
 }
 

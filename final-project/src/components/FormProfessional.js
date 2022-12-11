@@ -3,18 +3,22 @@ import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
 import swal from "sweetalert";
-import {validateRut} from "chilerut";
+import { validateRut, getCheckDigit } from "chilerut";
 
 
 function FormProfessional() {
 
+    const rut = "11.111.111-1"
+    const rutToPass = rut.slice(0, -1) 
     
-    const rut = (e) => {validateRut([e.target.value])};
+    const confirmedDigit = getCheckDigit(rutToPass) 
+
+    const rutvalidator = (e) => { validateRut([e.target.value])};
 
     const { store, actions } = useContext(Context);
     const [infoRegister, setInfoRegister] = useState();
 
-   
+
     const onChange = (e) => {
 
         setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
@@ -24,9 +28,9 @@ function FormProfessional() {
         e.preventDefault()
 
         actions.addNewProfessional(infoRegister)
-        .then(() => swal("Profesional creado exitosamente") ) 
-        .catch(error => swal(error))
-        
+            .then(() => swal("Profesional creado exitosamente"))
+            .catch(error => swal("Verifique si sus datos son los correctos", error))
+
     }
 
     return (
@@ -38,7 +42,7 @@ function FormProfessional() {
                     <form id="form" action="#" className="" onSubmit={submitForm}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
-                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} rut={() => validateRut(rut)}/>
+                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} rut={() => validateRut(rutvalidator,getCheckDigit)} />
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
