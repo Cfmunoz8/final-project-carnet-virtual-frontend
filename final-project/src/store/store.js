@@ -15,6 +15,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       habits: [],
       professionals: [],
       pathologys: [],
+      alert: ""
     },
     actions: {
       loginPatient: (info, navigate) => {
@@ -276,10 +277,16 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Content-Type": "application/json",
           },
         };
-        fetch(
+       return fetch(
           "https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/add_professional", addNewProfessional)
-          .then((res) => res.json())
-          .then((result) => setStore({ professionals: result }))
+          .then((res) => {
+           if (res.status === 201)
+           return res.json()
+          else 
+          return Promise.reject ("error")
+          })
+
+          .then((result) =>  setStore({ professionals: result }))
       },
 
       addNewPatient: (data) => {
