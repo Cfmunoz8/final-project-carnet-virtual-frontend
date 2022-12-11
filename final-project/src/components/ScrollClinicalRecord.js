@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Pathology from "../components/Pathology";
 import Drugs from "../components/Drugs";
 import { Link } from "react-router-dom";
+import NewControlModal from "./NewControlModal";
 
 function ScrollClinicalRecord() {
   return (
@@ -33,9 +34,43 @@ function ScrollClinicalRecord() {
         tabindex="0"
       >
         <div className="float-end">
-          <Link className=" btn btn-success" to="/new-control">
+          <button
+            type="button"
+            className="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
             Registrar Nueva Atención
-          </Link>
+          </button>
+          <div
+            className="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">
+                    Nuevo Control
+                  </h1>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="modal-body">
+                  <NewControlModal />
+                </div>
+                <div className="modal-footer">
+   
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <h4 id="scrollspyHeading1">Antecedentes Mórbidos</h4>
         <Pathology />

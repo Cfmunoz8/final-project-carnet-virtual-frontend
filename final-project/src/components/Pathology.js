@@ -13,10 +13,6 @@ function Pathology() {
     actions.getSurgeryById(id);
     actions.getAlergyById(id);
     actions.getHabitById(id);
-    actions.getPathologies();
-    actions.getSurgeries();
-    actions.getAlergies();
-    actions.getHabits();
   }, []);
   const submitForm = (e) => {
     e.preventDefault();

@@ -12,12 +12,32 @@ function Drugs() {
   }, []);
 
   const onChange = (e) => {
-    console.log(e.target.value);
-    setDrugsAndPosology({... drugsAndPosology, [e.target.name] : e.target.value})
+    console.log({ [e.target.name]: e.target.value });
+    setDrugsAndPosology({
+      clinical_record_id: id,
+      ...drugsAndPosology,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const submit = (e) => {
-    actions.addDrug(drugsAndPosology, e)
+  const submitDrug = (e) => {
+    e.preventDefault();
+    actions.addDrug(drugsAndPosology);
+  };
+
+  console.log("drugsAndPosology", drugsAndPosology);
+  console.log("succes?", store.successDrug);
+
+  const alert = () => {
+    if (store.successDrug == "success adding drug") {
+      <div className="alert alert-success" role="alert">
+        Medicamento agregado correctamente
+      </div>;
+    } else {
+      <div className="alert alert-danger" role="alert">
+        Complete todos los campos requeridos
+      </div>;
+    }
   };
 
   return (
@@ -44,7 +64,7 @@ function Drugs() {
             </ul>
           </div>
         </div>
-        <form onSubmit={()=>{submit()}}>
+        <form onSubmit={submitDrug}>
           <div className="input-group">
             <span className="input-group-text">Agregar un medicamento: </span>
             <input
@@ -52,23 +72,25 @@ function Drugs() {
               aria-label="Drug"
               className="form-control"
               placeholder="Fármaco"
-              onChange={(e) => {
-                onChange(e);
-              }}
+              name="name"
+              onChange={(e) => onChange(e)}
             />
             <input
               type="text"
               aria-label="Posology"
+              name="posology"
               className="form-control"
               placeholder="Posología"
-              onChange={(e) => {
-                onChange(e);
-              }}
+              onChange={(e) => onChange(e)}
             />
           </div>
-          <button type="submit" className="btn btn-outline-secondary">
-              Agregar
-            </button>
+          <button
+            type="submit"
+            className="btn btn-outline-secondary"
+            onClick={alert()}
+          >
+            Agregar
+          </button>
         </form>
       </div>
     </div>

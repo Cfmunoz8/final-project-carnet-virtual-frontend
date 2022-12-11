@@ -18,6 +18,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       alergy: [],
       habit: [],
       drug: [],
+      successDrug: "",
     },
     actions: {
       loginPatient: (info, navigate) => {
@@ -298,12 +299,18 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Content-Type": "application/json",
           },
         };
+
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/create_drug/",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_drug",
           postMethod
         )
           .then((res) => res.json())
-          .then((result) => console.log(result))
+          .then((result) => {
+            if ((result.msg = "medicamento añadido correctamente")) {
+              console.log(result);
+              setStore({ successDrug: "success adding drug" });
+            }
+          })
           .catch((error) => console.error("Error:", error));
       },
 
@@ -481,6 +488,24 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .then((data) => {
             setStore({ drug: data });
           });
+      },
+
+      addControl: (newControl) => {
+        const postMethod = {
+          method: "POST",
+          body: JSON.stringify(newControl),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/create_control",
+          postMethod
+        )
+          .then((res) => res.json())
+          .then((result) => console.log(result))
+          .catch((error) => console.error("Error:", error));
       },
     },
   };
