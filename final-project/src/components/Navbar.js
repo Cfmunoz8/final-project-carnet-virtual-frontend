@@ -1,7 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React ,useContext, useState, useEffect }from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../store/context";
 
 function Navbar(props) {
+
+  const navigate= useNavigate()
+  const { store, actions } = useContext(Context);
+  
   return (
     <div>
       <nav className="navbar navbar-expand-lg sticky-top bg-light">
@@ -50,9 +55,9 @@ function Navbar(props) {
                 </Link>
               </li>
               <li>
-                <Link className="dropdown-item" to={props.dropdownLink2}>
+                <button className="dropdown-item" onClick={()=>actions.logout(navigate)}>
                   {props.dropdownItem2}
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
