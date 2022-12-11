@@ -6,13 +6,11 @@ import { Context } from "../store/context";
 function ProfileViewFromProfessional() {
   const { store, actions } = useContext(Context);
   const { id } = useParams();
-
   useEffect(() => {
     actions.getPatientById(id);
     actions.getClinicalRecordById(id);
     actions.getCaregiverById(id);
   }, []);
-  console.log(store.caregiver)
 
   return (
     <div>

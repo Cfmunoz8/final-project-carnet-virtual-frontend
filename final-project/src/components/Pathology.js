@@ -2,11 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/context";
 import PatientResume from "./PatientResume";
+import { useParams } from "react-router-dom";
 
 function Pathology() {
   const { store, actions } = useContext(Context);
+  const { id } = useParams();
+
   useEffect(() => {
-    actions.getPathology();
+    actions.getPathologyById(id);
+    actions.getSurgeryById(id);
+    console.log("pathology", store.pathology)
     actions.getPathologies();
     actions.getSurgeries();
     actions.getAlergies();
@@ -24,7 +29,7 @@ function Pathology() {
             <div className="card-header">Patologias</div>
             {
               <ul className="card-body list-group list-group-flush ">
-                {store.pathologies?.map((item) => {
+                {store.pathology?.map((item) => {
                   return (
                     <li key={item.id} className="list-group-item">
                       {item.name}
@@ -50,7 +55,7 @@ function Pathology() {
             <div className="card-header">Cirugías</div>
             {
               <ul className="card-body list-group list-group-flush ">
-                {store.surgeries?.map((item) => {
+                {store.surgery?.map((item) => {
                   return (
                     <li key={item.id} className="list-group-item">
                       {item.name}

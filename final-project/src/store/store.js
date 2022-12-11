@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 
 export const getState = ({ getActions, getStore, setStore }) => {
   return {
@@ -15,6 +14,11 @@ export const getState = ({ getActions, getStore, setStore }) => {
       habits: [],
       professionals: [],
       pathologys: [],
+      pathology: [],
+      surgery: [],
+      alergy: [],
+      habit: [],
+      drug: [],
     },
     actions: {
       loginPatient: (info, navigate) => {
@@ -226,7 +230,6 @@ export const getState = ({ getActions, getStore, setStore }) => {
         )
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
             setStore({ pathologies: data });
           });
       },
@@ -371,7 +374,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver_by_id/"+ id,
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver_by_id/"+id,
           method
         )
           .then((response) => response.json())
@@ -379,6 +382,45 @@ export const getState = ({ getActions, getStore, setStore }) => {
             setStore({ caregiver: data });
           });
       },
+
+      getPathologyById: (clinical_record_id) => {
+        const token = localStorage.getItem("access_token");
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_pathology_by_id/"+clinical_record_id,
+          method
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ pathology: data });
+          });
+      },
+
+      getSurgeryById: (clinical_record_id) => {
+        const token = localStorage.getItem("access_token");
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_surgery_by_id/"+clinical_record_id,
+          method
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ surgery: data });
+          });
+      },
+
     },
   };
 };
