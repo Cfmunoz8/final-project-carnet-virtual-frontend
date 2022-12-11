@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/form-registration" element={<FormR/>} />
-        <Route path="/pathology" element={<File />} />
+        <Route path="/pathology/:id" element={<File />} />
         <Route path="/patient-list" element={<PatientListProfessional />} />
         <Route path="/new-control" element={<NewControl />} />
         <Route path="/professional-login" element={<ProfessionalLogin />} />
