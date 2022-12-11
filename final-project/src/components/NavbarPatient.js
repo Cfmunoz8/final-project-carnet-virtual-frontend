@@ -1,25 +1,27 @@
 import React, { useContext } from "react";
-import Navbar from "./Navbar";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 function NavbarPatient() {
-  return (
-    <div className="navbar-professional mb-1">
-      <Navbar
-        item1="Resumen y Controles"
-        link1="/patient-home"
-        item2="Antecedentes"
-        link2="/background"
-        item3="Medicamentos"
-        link3="/drugs"
-        dropdown= "Mis controles"
-        dropdownItem1 = "01/05/2022"
-        dropdownLink1 = "/"
-        dropdownItem2 = "02/04/2022"
-        dropdownLink2 = "/"
-      />
-    </div>
-  );
-}
+      return (
+        <div>
+          <nav className="navbar navbar-expand-lg sticky-top bg-light">
+              <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                  <Link className="nav-link" aria-current="page" to="/patient-home">
+                    Resumen y Controles
+                  </Link>
+                  <Link className="nav-link" to="/background">
+                    Antecedentes
+                  </Link>
+                  <Link className="nav-link" to="/drugs">
+                    Medicamentos
+                  </Link>
+                </div>
+              </div>
+          </nav>
+        </div>
+      );
+    }
 
 export default NavbarPatient;

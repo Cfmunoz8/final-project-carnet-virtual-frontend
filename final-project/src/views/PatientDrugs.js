@@ -13,7 +13,7 @@ function PatientHome() {
       <Header />
       <Navbar
         header="Bienvenido/a,"
-        dropdown={<CgProfile />}
+        dropdown= {<CgProfile />}
         dropdownItem1="Mi Perfil"
         dropdownLink1="/"
         dropdownItem2="Cerrar Sesión"
@@ -23,9 +23,8 @@ function PatientHome() {
         <div className="col-3">
           <ProfileView />
         </div>
-        <div className="col-9"> 
-          <DrugList
-          />
+        <div className="col-9">
+          <DrugList />
         </div>
       </div>
     </div>
