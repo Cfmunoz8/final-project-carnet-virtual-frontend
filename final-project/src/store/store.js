@@ -391,9 +391,10 @@ export const getState = ({ getActions, getStore, setStore }) => {
           body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json",
-          },
+           },
         };
-        fetch("https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/add_patient", addNewPatient)
+      fetch(
+          "https://8080-4geeksacademy-htmlhello-611qqxdbe0s.ws-us78.gitpod.io/add_patient", addNewPatient)
           .then((res) => res.json())
           .then((result) => setStore({ patients: result }))
       },
