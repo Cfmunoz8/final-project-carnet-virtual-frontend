@@ -3,12 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
 import swal from "sweetalert";
-import { getState } from "../store/store";
+import {validateRut} from "chilerut";
 
 
 function FormProfessional() {
 
     
+    const rut = (e) => {validateRut([e.target.value])};
+
     const { store, actions } = useContext(Context);
     const [infoRegister, setInfoRegister] = useState();
 
@@ -36,7 +38,7 @@ function FormProfessional() {
                     <form id="form" action="#" className="" onSubmit={submitForm}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
-                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
+                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} rut={() => validateRut(rut)}/>
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
@@ -91,7 +93,7 @@ function FormProfessional() {
                         </div>
 
 
-                        <button className="btn btn-primary my-5" value="add Item" type="submit" onClick={(e) => alert()} > Registrate </button>
+                        <button className="btn btn-primary my-5" value="add Item" type="submit" onClick={() => alert()} > Registrate </button>
                     </form>
                 </div>
             </div>
