@@ -65,9 +65,7 @@ function ScrollClinicalRecord() {
                 <div className="modal-body">
                   <NewControlModal />
                 </div>
-                <div className="modal-footer">
-   
-                </div>
+                <div className="modal-footer"></div>
               </div>
             </div>
           </div>

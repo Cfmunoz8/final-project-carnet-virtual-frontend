@@ -6,17 +6,34 @@ import { useParams } from "react-router-dom";
 
 function Pathology() {
   const { store, actions } = useContext(Context);
+  const [infoPathology, setInfoPathology] = useState();
+  const [list, setList] = useState(false);
   const { id } = useParams();
+
+ 
 
   useEffect(() => {
     actions.getPathologyById(id);
     actions.getSurgeryById(id);
     actions.getAlergyById(id);
     actions.getHabitById(id);
-  }, []);
-  const submitForm = (e) => {
-    e.preventDefault();
+  }, [list]);
+
+  const onChangePathology = (e) => {
+    setInfoPathology({
+      clinical_record_id: id,
+      ...infoPathology,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  const submitPathology = (e) => {
+    e.preventDefault();
+    actions.addPathology(infoPathology, setList, list);
+    setInfoPathology({name: ""})
+  };
+
+  console.log("infoPathology", infoPathology);
 
   return (
     <div className="container container-fluid mt-5 p-5 bg-light">
@@ -36,16 +53,21 @@ function Pathology() {
               </ul>
             }
           </div>
-          <input
-            className="form-control me-2"
-            type="input"
-            placeholder="Escriba la patología"
-            aria-label=""
-            style={{ width: "24rem" }}
-          />
-          <button className="btn btn-outline-secondary" type="submit">
-            Agregar Patología
-          </button>
+          <form onSubmit={submitPathology}>
+            <input
+              className="form-control me-2"
+              type="input"
+              placeholder="Escriba la patología"
+              aria-label="name"
+              name= "name"
+              style={{ width: "24rem" }}
+              onChange={(e) => onChangePathology(e)}
+              value={infoPathology?.name}
+            />
+            <button className="btn btn-outline-secondary" type="submit">
+              Agregar Patología
+            </button>
+          </form>
         </div>
         <div className="col-6 mb-3">
           <div className="card mb-3" style={{ width: "24rem" }}>
@@ -75,7 +97,7 @@ function Pathology() {
         </div>
       </div>
       <div className="row">
-      <div className="col-6 mb-3">
+        <div className="col-6 mb-3">
           <div className="card mb-3" style={{ width: "24rem" }}>
             <div className="card-header">Alergias</div>
             {
@@ -91,15 +113,15 @@ function Pathology() {
             }
           </div>
           <input
-              className="form-control me-2"
-              type="input"
-              placeholder="Escriba la alergia"
-              aria-label=""
-              style={{ width: "24rem" }}
-            />
-            <button className="btn btn-outline-secondary" type="submit">
-              Agregar Alergia
-            </button>
+            className="form-control me-2"
+            type="input"
+            placeholder="Escriba la alergia"
+            aria-label=""
+            style={{ width: "24rem" }}
+          />
+          <button className="btn btn-outline-secondary" type="submit">
+            Agregar Alergia
+          </button>
         </div>
         <div className="col-6 mb-3">
           <div className="card mb-3" style={{ width: "24rem" }}>
@@ -117,15 +139,15 @@ function Pathology() {
             }
           </div>
           <input
-              className="form-control me-2"
-              type="input"
-              placeholder="Escriba el hábito"
-              aria-label=""
-              style={{ width: "24rem" }}
-            />
-            <button className="btn btn-outline-secondary" type="submit">
-              Agregar Hábito
-            </button>
+            className="form-control me-2"
+            type="input"
+            placeholder="Escriba el hábito"
+            aria-label=""
+            style={{ width: "24rem" }}
+          />
+          <button className="btn btn-outline-secondary" type="submit">
+            Agregar Hábito
+          </button>
         </div>
       </div>
     </div>
