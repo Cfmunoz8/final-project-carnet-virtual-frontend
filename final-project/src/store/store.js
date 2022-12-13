@@ -314,7 +314,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           });
       },
 
-      addDrug: (drugAndPosology) => {
+      addDrug: (drugAndPosology, setList, list) => {
         const postMethod = {
           method: "POST",
           body: JSON.stringify(drugAndPosology),
@@ -329,10 +329,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
         )
           .then((res) => res.json())
           .then((result) => {
-            if ((result.msg = "medicamento añadido correctamente")) {
-              console.log(result);
-              setStore({ successDrug: "success adding drug" });
-            }
+            console.log(result);
+            setList(!list);
           })
           .catch((error) => console.error("Error:", error));
       },
@@ -549,7 +547,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           });
       },
 
-      addControl: (newControl) => {
+      addControl: (newControl, setList, list) => {
         const postMethod = {
           method: "POST",
           body: JSON.stringify(newControl),
@@ -563,7 +561,10 @@ export const getState = ({ getActions, getStore, setStore }) => {
           postMethod
         )
           .then((res) => res.json())
-          .then((result) => console.log(result))
+          .then((result) => {
+            console.log(result);
+            setList(!list);
+          })
           .catch((error) => console.error("Error:", error));
       },
 
@@ -601,6 +602,26 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .then((res) => res.json())
           .then((result) => console.log(result))
           .catch((error) => console.error("Error:", error));
+      },
+
+      getControlById: (clinical_record_id) => {
+        const token = localStorage.getItem("access_token");
+        const method = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_controls_by_id/" +
+            clinical_record_id,
+          method
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ controls: data });
+          });
       },
     },
   };

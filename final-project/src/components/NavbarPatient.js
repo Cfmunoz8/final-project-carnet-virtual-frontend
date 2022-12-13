@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function NavbarPatient() {
       return (
         <div>
-          <nav className="navbar navbar-expand-lg sticky-top bg-light">
+          <nav className="navbar navbar-expand-lg sticky-top bg-light border-bottom">
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                   <Link className="nav-link" aria-current="page" to="/patient-home">

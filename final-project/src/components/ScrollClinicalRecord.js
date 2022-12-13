@@ -4,10 +4,11 @@ import Pathology from "../components/Pathology";
 import Drugs from "../components/Drugs";
 import { Link } from "react-router-dom";
 import NewControlModal from "./NewControlModal";
+import ControlHistory from "./ControlHistory";
 
 function ScrollClinicalRecord() {
   return (
-    <div className="container-fuid">
+    <div className="container-fuid bg-light">
       <nav id="navbar-example2" className="navbar bg-light px-3 mb-3 mt-5">
         <a className="navbar-brand" href="#">
           Ficha Clínica
@@ -20,6 +21,11 @@ function ScrollClinicalRecord() {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#scrollspyHeading2">
+              Historial de Controles
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#scrollspyHeading3">
               Tratamiento Farmacológico
             </a>
           </li>
@@ -32,49 +38,12 @@ function ScrollClinicalRecord() {
         data-bs-smooth-scroll="true"
         className="scrollspy-example bg-light p-3 rounded-2"
         tabindex="0"
-      >
-        <div className="float-end">
-          <button
-            type="button"
-            className="btn btn-success"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Registrar Nueva Atención
-          </button>
-          <div
-            className="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">
-                    Nuevo Control
-                  </h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div className="modal-body">
-                  <NewControlModal />
-                </div>
-                <div className="modal-footer"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h4 id="scrollspyHeading1">Antecedentes Mórbidos</h4>
-        <Pathology />
-        <h4 id="scrollspyHeading2">Tratamiento Farmacológico</h4>
-        <Drugs />
-      </div>
+      ></div>
+      <h4 id="scrollspyHeading1">Antecedentes Mórbidos</h4>
+      <Pathology />
+      <h4 id="scrollspyHeading2">Historial de Controles</h4> <ControlHistory />
+      <h4 id="scrollspyHeading3">Tratamiento Farmacológico</h4>
+      <Drugs />
     </div>
   );
 }

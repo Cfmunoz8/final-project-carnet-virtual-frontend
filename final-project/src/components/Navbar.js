@@ -9,7 +9,7 @@ function Navbar(props) {
   
   return (
     <div>
-      <nav className="navbar navbar-expand-lg sticky-top bg-light">
+      <nav className="navbar navbar-expand-lg sticky-top bg-light border">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Home

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function NavbarPresentation() {
     return (
         <div>
-        <nav className="navbar navbar-expand-lg sticky-top bg-light">
+        <nav className="navbar navbar-expand-lg sticky-top bg-light border">
           <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Home

@@ -6,7 +6,7 @@ function NavbarProfessional() {
 
 
   return (
-    <div className="navbar-professional">
+    <div className="navbar-professional border">
       <Navbar
         item1="Pacientes"
         link1="/patient-list"

@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/context";
-import PatientResume from "./PatientResume";
 import { useParams } from "react-router-dom";
 
 function Pathology() {
@@ -9,8 +8,6 @@ function Pathology() {
   const [infoPathology, setInfoPathology] = useState();
   const [list, setList] = useState(false);
   const { id } = useParams();
-
- 
 
   useEffect(() => {
     actions.getPathologyById(id);
@@ -22,7 +19,6 @@ function Pathology() {
   const onChangePathology = (e) => {
     setInfoPathology({
       clinical_record_id: id,
-      ...infoPathology,
       [e.target.name]: e.target.value,
     });
   };
@@ -30,7 +26,7 @@ function Pathology() {
   const submitPathology = (e) => {
     e.preventDefault();
     actions.addPathology(infoPathology, setList, list);
-    setInfoPathology({name: ""})
+    setInfoPathology({ name: "" });
   };
 
   console.log("infoPathology", infoPathology);
@@ -59,7 +55,7 @@ function Pathology() {
               type="input"
               placeholder="Escriba la patología"
               aria-label="name"
-              name= "name"
+              name="name"
               style={{ width: "24rem" }}
               onChange={(e) => onChangePathology(e)}
               value={infoPathology?.name}
