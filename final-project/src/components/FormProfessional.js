@@ -3,33 +3,61 @@ import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
 import swal from "sweetalert";
-import { validateRut, getCheckDigit } from "chilerut";
+
 
 
 function FormProfessional() {
 
-    const rut = "11.111.111-1"
-    const rutToPass = rut.slice(0, -1) 
+    //const rut = "11.111.111-1"
+   // const rutToPass = rut.slice(0, -1) 
     
-    const confirmedDigit = getCheckDigit(rutToPass) 
+   // const confirmedDigit = getCheckDigit(rutToPass) 
 
-    const rutvalidator = (e) => { validateRut([e.target.value])};
+   // const rutvalidator = (e) => { validateRut([e.target.value])};
 
     const { store, actions } = useContext(Context);
-    const [infoRegister, setInfoRegister] = useState();
-
+    const [infoRegister, setInfoRegister] = useState({name:"",lastname:"",rut:"",role:"",email:"",password:"",password2:""});
+    const [error,setError] = useState(false)
 
     const onChange = (e) => {
+if (e.target.name=="rut"){
+  if  (e.target.value.length==9){
+    setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
+    setError(false)
+  } else {setError(true)}
 
+}      
         setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
     }
     useEffect(() => { }, [infoRegister])
     const submitForm = (e) => {
         e.preventDefault()
-
-        actions.addNewProfessional(infoRegister)
-            .then(() => swal("Profesional creado exitosamente"))
-            .catch(error => swal("Verifique si sus datos son los correctos", error))
+        
+        if (infoRegister.name=== ""){
+            swal("Error","Por favor complete todos los campos")
+        }
+        if(infoRegister.lastname===""){
+            swal("Error","Por favor complete todos los campos")   
+        } 
+        if(infoRegister.rut===""){
+            swal("Error","Por favor complete todos los campos")   
+        } 
+        if(infoRegister.role===""){
+            swal("Error","Por favor complete todos los campos")   
+        } 
+        if(infoRegister.email===""){
+            swal("Error","Por favor complete todos los campos")   
+        } 
+        if(infoRegister.password===""){
+            swal("Error","Por favor complete todos los campos")   
+        } 
+        if(infoRegister.password2===""){
+            swal("Error","Por favor complete todos los campos")   
+        } else {
+            actions.addNewProfessional(infoRegister)
+            swal("Profesional creado exitosamente")
+            //.catch(error => swal("Verifique si sus datos son los correctos", error))
+        }
 
     }
 
@@ -42,7 +70,7 @@ function FormProfessional() {
                     <form id="form" action="#" className="" onSubmit={submitForm}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
-                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} rut={() => validateRut(rutvalidator,getCheckDigit)} />
+                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)}/>
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
@@ -52,7 +80,7 @@ function FormProfessional() {
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Rut</span>
-                            <input type="text" name="rut" className="form-control" placeholder="Ingrese su rut sin puntos ni guion" aria-label="number" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
+                            <input type="text" name="rut" className={error?"text-danger form-control":"form-control"} placeholder="Ingrese su rut sin puntos ni guion" aria-label="number" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Email</span>
@@ -90,14 +118,14 @@ function FormProfessional() {
                                     </label>
                                 </div>
                                 <div className="col-auto">
-                                    <input type="password" id="inputPassword6" className="form-control" aria-describedby="passwordHelpInline" onChange={(e) => onChange(e)} />
+                                    <input type="password" name="password2" id="inputPassword6" className="form-control" aria-describedby="passwordHelpInline" onChange={(e) => onChange(e)} />
                                 </div>
 
                             </div>
                         </div>
 
 
-                        <button className="btn btn-primary my-5" value="add Item" type="submit" onClick={() => alert()} > Registrate </button>
+                        <button className="btn btn-primary my-5" value="add Item" type="submit"  > Registrate </button>
                     </form>
                 </div>
             </div>

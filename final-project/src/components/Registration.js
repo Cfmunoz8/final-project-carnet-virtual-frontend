@@ -73,8 +73,8 @@ function RegistrationForm() {
                             <span className="input-group-text" id="basic-addon1">Genero</span>
                             <select className="form-select form-select-sm" name="gender" aria-label=".form-select-sm example" onChange={(e) => onChange(e)}>
                                 <option selected>Seleccione un Genero</option>
-                                <option value="male">Masculino</option>
-                                <option value="female">Femenino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
                             </select>
                         </div>
                         <div className="row g-3 align-items-center">

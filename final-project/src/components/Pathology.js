@@ -5,6 +5,7 @@ import PatientResume from "./PatientResume";
 import { useParams } from "react-router-dom";
 
 function Pathology() {
+
   const { store, actions } = useContext(Context);
   const { id } = useParams();
 
@@ -14,16 +15,16 @@ function Pathology() {
     actions.getAlergyById(id);
     actions.getHabitById(id);
   }, []);
-  const submitForm = (e) => {
-    e.preventDefault();
-  };
+  
 
   return (
-   
+    
     <div className="container container-fluid mt-5 p-5 bg-light">
       <div className="row">
+      
         <div className="col-6 mb-3">
           <div className="card mb-3" style={{ width: "24rem" }}>
+         
             <div className="card-header">Patologias</div>
             {
               <ul className="card-body list-group list-group-flush ">
@@ -43,11 +44,13 @@ function Pathology() {
             placeholder="Escriba la patología"
             aria-label=""
             style={{ width: "24rem" }}
+            
           />
-          <button className="btn btn-outline-secondary" type="submit">
+          <button className="btn btn-outline-secondary" type="submit"   >
             Agregar Patología
           </button>
         </div>
+        
         <div className="col-6 mb-3">
           <div className="card mb-3" style={{ width: "24rem" }}>
             <div className="card-header">Cirugías</div>
@@ -130,6 +133,7 @@ function Pathology() {
         </div>
       </div>
     </div>
+    
   );
 }
 
