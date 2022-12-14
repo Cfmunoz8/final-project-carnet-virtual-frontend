@@ -20,6 +20,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       habit: [],
       drug: [],
       successDrug: "",
+      pharmacy: [],
     },
     actions: {
       loginPatient: (info, navigate) => {
@@ -32,7 +33,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/login_patient",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/login_patient",
 
           postLogin
         )
@@ -58,7 +59,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
 
       getPathology: () => {
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/pathology"
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/pathology"
         )
           .then((response) => response.json())
           .then((data) => {
@@ -75,7 +76,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_pathology",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/add_pathology",
           postMethod
         )
           .then((res) => res.json())
@@ -95,7 +96,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/login_professional",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/login_professional",
 
           postLogin
         )
@@ -125,7 +126,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/patient_list",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/patient_list",
           getMethod
         )
           .then((response) => response.json())
@@ -143,7 +144,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/update_patient_alive/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/update_patient_alive/" +
             id,
 
           putMethod
@@ -164,7 +165,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/drugs",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/drugs",
           method
         )
           .then((response) => response.json())
@@ -184,7 +185,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_clinical_record",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_clinical_record",
           method
         )
           .then((response) => response.json())
@@ -204,7 +205,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_caregiver",
           method
         )
           .then((response) => response.json())
@@ -224,7 +225,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_controls",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_controls",
           method
         )
           .then((response) => response.json())
@@ -246,7 +247,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/pathologies",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/pathologies",
           method
         )
           .then((response) => response.json())
@@ -266,7 +267,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/surgeries",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/surgeries",
           method
         )
           .then((response) => response.json())
@@ -286,7 +287,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/habits",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/habits",
           method
         )
           .then((response) => response.json())
@@ -305,7 +306,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/alergies",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/alergies",
           method
         )
           .then((response) => response.json())
@@ -324,7 +325,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
         };
 
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_drug",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/add_drug",
           postMethod
         )
           .then((res) => res.json())
@@ -346,7 +347,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/professionals",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/professionals",
           getMethod
         )
           .then((response) => response.json())
@@ -365,7 +366,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/patient/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/patient/" +
             id,
           getMethod
         )
@@ -382,7 +383,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         return fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_professional",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/add_professional",
           addNewProfessional
         )
           .then((res) => {
@@ -402,7 +403,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_patient",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/add_patient",
           addNewPatient
         )
           .then((res) => res.json())
@@ -419,7 +420,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_clinical_record/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_clinical_record/" +
             id,
           method
         )
@@ -437,7 +438,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_caregiver_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_caregiver_by_id/" +
             id,
           method
         )
@@ -457,7 +458,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_pathology_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_pathology_by_id/" +
             clinical_record_id,
           method
         )
@@ -477,7 +478,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_surgery_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_surgery_by_id/" +
             clinical_record_id,
           method
         )
@@ -497,7 +498,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_alergy_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_alergy_by_id/" +
             clinical_record_id,
           method
         )
@@ -517,7 +518,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_habit_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_habit_by_id/" +
             clinical_record_id,
           method
         )
@@ -537,7 +538,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_drug_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_drug_by_id/" +
             clinical_record_id,
           method
         )
@@ -557,7 +558,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/create_control",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/create_control",
           postMethod
         )
           .then((res) => res.json())
@@ -578,7 +579,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/create_clinical_record",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/create_clinical_record",
           postMethod
         )
           .then((res) => res.json())
@@ -596,7 +597,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/add_caregiver",
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/add_caregiver",
           postMethod
         )
           .then((res) => res.json())
@@ -614,13 +615,28 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us78.gitpod.io/get_controls_by_id/" +
+          "https://8080-4geeksacademy-htmlhello-l349w1sqq6b.ws-us79.gitpod.io/get_controls_by_id/" +
             clinical_record_id,
           method
         )
           .then((response) => response.json())
           .then((data) => {
             setStore({ controls: data });
+          });
+      },
+
+      getPharmacy: () => {
+        const method = {
+          method: "GET",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        fetch("http://farmanet.minsal.cl/index.php/ws/getLocales", method)
+          .then((response) => response.json())
+          .then((data) => {
+            setStore({ pharmacy: data });
           });
       },
     },

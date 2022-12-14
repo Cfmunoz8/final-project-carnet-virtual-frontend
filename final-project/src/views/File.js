@@ -6,6 +6,8 @@ import NavbarProfessional from "../components/NavbarProfessional";
 import ProfileView from "../components/ProfileView";
 import ScrollClinicalRecord from "../components/ScrollClinicalRecord";
 import ProfileViewFromProfessional from "../components/ProfileViewFromProfessional";
+import Footer from "../components/Footer";
+
 
 function File() {
   return (
@@ -20,6 +22,7 @@ function File() {
           <ScrollClinicalRecord />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

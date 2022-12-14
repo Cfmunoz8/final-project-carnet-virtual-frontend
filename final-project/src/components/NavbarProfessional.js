@@ -10,7 +10,7 @@ function NavbarProfessional() {
       <Navbar
         item1="Pacientes"
         link1="/patient-list"
-        header= "Bienvenido, nombre apellido"
+        header= "Bienvenido/a "
         dropdown= {<CgProfile />}
         dropdownItem1 = "Mi Perfil"
         dropdownLink1 = "/"

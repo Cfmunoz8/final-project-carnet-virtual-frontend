@@ -1,6 +1,4 @@
 import React from "react";
-import icono1 from "../images/icono1.png";
-import icono2 from "../images/icono2.png";
 import icono3 from "../images/icono3.png";
 
 function Header() {
