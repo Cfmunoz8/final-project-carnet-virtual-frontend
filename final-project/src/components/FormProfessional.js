@@ -3,31 +3,17 @@ import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
 import swal from "sweetalert";
-
+import { formatRut, validRut } from "chilean-rutify";
 
 
 function FormProfessional() {
-
-    //const rut = "11.111.111-1"
-   // const rutToPass = rut.slice(0, -1) 
-    
-   // const confirmedDigit = getCheckDigit(rutToPass) 
-
-   // const rutvalidator = (e) => { validateRut([e.target.value])};
 
     const { store, actions } = useContext(Context);
     const [infoRegister, setInfoRegister] = useState({name:"",lastname:"",rut:"",role:"",email:"",password:"",password2:""});
     const [error,setError] = useState(false)
 
     const onChange = (e) => {
-if (e.target.name=="rut"){
-  if  (e.target.value.length==9){
-    setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
-    setError(false)
-  } else {setError(true)}
-
-}      
-        setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
+      setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
     }
     useEffect(() => { }, [infoRegister])
     const submitForm = (e) => {
@@ -61,6 +47,12 @@ if (e.target.name=="rut"){
 
     }
 
+    const isValidRut = () => {
+        if (validRut(infoRegister?.rut) != true) {
+          return <p className="text-danger ms-2"> Debes ingresar un RUT válido.</p>;
+        }
+      };
+
     return (
         <div className="p-5">
             <div className="">
@@ -80,8 +72,17 @@ if (e.target.name=="rut"){
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Rut</span>
-                            <input type="text" name="rut" className={error?"text-danger form-control":"form-control"} placeholder="Ingrese su rut sin puntos ni guion" aria-label="number" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
+                            <input type="rut" 
+                            name="rut" 
+                            className="form-control" 
+                            placeholder="Ingrese su rut sin puntos ni guion" 
+                            aria-label="number" 
+                            aria-describedby="basic-addon1" 
+                            onChange={(e) => onChange(e)} 
+                            value={formatRut(infoRegister?.rut)}
+                            />
                         </div>
+                        {isValidRut()}
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Email</span>
                             <input type="email" name="email" className="form-control" placeholder="Example@mail.com" aria-label="Email" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
