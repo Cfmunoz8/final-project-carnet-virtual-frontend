@@ -3,13 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { Context } from "../store/context";
 import swal from "sweetalert";
+
 import { formatRut, validRut } from "chilean-rutify";
 
 function RegistrationForm() {
 
 
     const { store, actions } = useContext(Context);
-    const [infoPatient, setInfoPatient] = useState({ name: "", lastname: "", rut: "", email: "", ege: "", birth_date:"", address:"", phone_number:"", gender:"", password: "", password2: "" });
+    const [infoPatient, setInfoPatient] = useState({ name: "", lastname: "", rut: "", email: "", ege: "", birth_date:"", address:"", phone_number:"", gender:"", password: "", confirmPassword "" });
     const onChange = (e) => {
 
         setInfoPatient({ ...infoPatient, [e.target.name]: e.target.value })
@@ -48,7 +49,7 @@ function RegistrationForm() {
         if (infoPatient.password === "") {
             swal("Error", "Por favor complete todos los campos")
         }
-        if (infoPatient.password2 === "") {
+        if (infoPatient.confirmPassword === "") {
             swal("Error", "Por favor complete todos los campos")
         }
         else {
@@ -63,6 +64,17 @@ function RegistrationForm() {
           return <p className="text-danger ms-2"> Debes ingresar un RUT válido.</p>;
         }
       };
+      
+       const verifyPassword = () => {
+    if (infoPatient?.password !== infoPatient?.confirmPassword) {
+      return (
+        <p className="text-danger ms-2">
+          {" "}
+          Las contraseñas ingresadas no coindicen.
+        </p>
+      );
+    }
+  };
 
     return (
         <div className="p-5">
@@ -141,19 +153,25 @@ function RegistrationForm() {
                                         <span className="input-group-text" id="basic-addon1">Confirmar contraseña</span>
                                     </label>
                                 </div>
-                                <div className="col-auto">
-                                    <input type="password" name="password2" id="inputPassword6" className="form-control" aria-describedby="passwordHelpInline" onChange={(e) => onChange(e)} />
-                                </div>
-
-                            </div>
-                        </div>
-                        <button className="btn btn-primary my-5" type="submit" > Registrate </button>
-                    </form>
-                </div>
+                              <div className="col-auto">
+                <input
+                  type="password"
+                  id="inputConfirmPassword"
+                  className="form-control"
+                  aria-describedby="passwordHelpInline"
+                  onChange={(e) => onChange(e)}
+                  name="confirmPassword"
+                />
+              </div>
             </div>
-        </div>
+            {verifyPassword()}
+                        <button className="btn btn-primary my-5" type="submit" > {" "}Registrate{" "} </button>
+                    </form>
 
-    )
-};
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default RegistrationForm;

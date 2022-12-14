@@ -1,15 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/context";
-import PatientResume from "./PatientResume";
 import { useParams } from "react-router-dom";
 
 function Pathology() {
 
   const { store, actions } = useContext(Context);
+
   const [infoSurgeries, setInfoSuergeries] = useState();
   const [infoHabit, setInfoHabit] = useState();
   const [infoAlergy, setInfoAlergy] = useState();
+  const [infoPathology, setInfoPathology] = useState();
+
   const [list, setList] = useState(false);
   const { id } = useParams();
 
@@ -20,12 +22,26 @@ function Pathology() {
     actions.getHabitById(id);
   }, [list]);
 
-  const onChangeSurgeries = (e) => {
-    setInfoSuergeries({
+
+  const onChangePathology = (e) => {
+    setInfoPathology({
       clinical_record_id: id,
       [e.target.name]: e.target.value,
     });
   };
+   const submitPathology = (e) => {
+    e.preventDefault();
+    actions.addPathology(infoPathology, setList, list);
+    setInfoPathology({ name: "" });
+    
+    
+    const onChangeSurgeries = (e) => {
+    setInfoSuergeries({
+    clinical_record_id: id,
+      [e.target.name]: e.target.value,
+    });
+   }:
+
 
   const submitSurgerie = (e) => {
     e.preventDefault();
@@ -80,17 +96,21 @@ function Pathology() {
               </ul>
             }
           </div>
-          <input
-            className="form-control me-2"
-            type="input"
-            placeholder="Escriba la patología"
-            aria-label=""
-            style={{ width: "24rem" }}
-
-          />
-          <button className="btn btn-outline-secondary" type="submit"   >
-            Agregar Patología
-          </button>
+          <form onSubmit={submitPathology}>
+            <input
+              className="form-control me-2"
+              type="input"
+              placeholder="Escriba la patología"
+              aria-label="name"
+              name="name"
+              style={{ width: "24rem" }}
+              onChange={(e) => onChangePathology(e)}
+              value={infoPathology?.name}
+            />
+            <button className="btn btn-outline-secondary" type="submit">
+              Agregar Patología
+            </button>
+          </form>
 
         </div>
 
@@ -142,6 +162,7 @@ function Pathology() {
               </ul>
             }
           </div>
+
           <form onSubmit={submitAlergy}>
             <input
               className="form-control me-2"
@@ -173,7 +194,6 @@ function Pathology() {
               </ul>
             }
           </div>
-
           <form onSubmit={submitHabit}>
             <input
               className="form-control me-2"
@@ -189,6 +209,7 @@ function Pathology() {
               Agregar Hábito
             </button>
           </form>
+
         </div>
       </div>
     </div>

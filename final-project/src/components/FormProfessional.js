@@ -9,7 +9,7 @@ import { formatRut, validRut } from "chilean-rutify";
 function FormProfessional() {
 
     const { store, actions } = useContext(Context);
-    const [infoRegister, setInfoRegister] = useState({name:"",lastname:"",rut:"",role:"",email:"",password:"",password2:""});
+    const [infoRegister, setInfoRegister] = useState({name:"",lastname:"",rut:"",role:"",email:"",password:"",confirmPassword:""});
     const [error,setError] = useState(false)
 
     const onChange = (e) => {
@@ -37,7 +37,7 @@ function FormProfessional() {
         if(infoRegister.password===""){
             swal("Error","Por favor complete todos los campos")   
         } 
-        if(infoRegister.password2===""){
+        if(infoRegister.confirmPassword===""){
             swal("Error","Por favor complete todos los campos")   
         } else {
             actions.addNewProfessional(infoRegister)
@@ -52,6 +52,18 @@ function FormProfessional() {
           return <p className="text-danger ms-2"> Debes ingresar un RUT válido.</p>;
         }
       };
+      
+      const verifyPassword = () => {
+    if (infoRegister?.password !== infoRegister?.confirmPassword) {
+      return (
+        <p className="text-danger ms-2">
+          {" "}
+          Las contraseñas ingresadas no coindicen.
+        </p>
+      );
+    }
+  };
+      
 
     return (
         <div className="p-5">
@@ -103,36 +115,49 @@ function FormProfessional() {
                                 <option value="Tecnico en Enfermeria">Tecnico en Enfermeria</option>
                             </select>
                         </div>
-                        <div className="row g-3 align-items-center">
-                            <div className="col-auto">
-                                <label for="inputPassword6" className="col-form-label">
-                                    <span className="input-group-text" id="basic-addon1">Contaseña</span>
-                                </label>
-                            </div>
-                            <div className="col-auto">
-                                <input type="password" name="password" id="inputPassword6" className="form-control" aria-describedby="passwordHelpInline" onChange={(e) => onChange(e)} />
-                            </div>
-                            <div className="row g-3 align-items-center">
-                                <div className="col-auto">
-                                    <label for="inputPassword6" className="col-form-label">
-                                        <span className="input-group-text" id="basic-addon1">Confirmar contraseña</span>
-                                    </label>
-                                </div>
-                                <div className="col-auto">
-                                    <input type="password" name="password2" id="inputPassword6" className="form-control" aria-describedby="passwordHelpInline" onChange={(e) => onChange(e)} />
-                                </div>
+                               <div className="row g-3 align-items-center">
+              <div className="col-auto">
+                <label for="inputPassword6" className="col-form-label">
+                  <span className="input-group-text" id="basic-addon1">
+                    Contraseña
+                  </span>
+                </label>
+              </div>
+              <div className="col-auto">
+                <input
+                  type="password"
+                  name="password"
+                  id="inputPassword"
+                  className="form-control"
+                  aria-describedby="passwordHelpInline"
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+            </div>
 
-                            </div>
-                        </div>
+            <div className="row g-3 align-items-center">
+              <div className="col-auto">
+                <label for="inputConfirmPassword" className="col-form-label">
+                  <span className="input-group-text" id="basic-addon1">
+                    Confirmar contraseña
+                  </span>
+                </label>
+              </div>
+              <div className="col-auto">
+                <input
+                  type="password"
+                  id="inputConfirmPassword"
+                  className="form-control"
+                  aria-describedby="passwordHelpInline"
+                  onChange={(e) => onChange(e)}
+                  name="confirmPassword"
+                />
+              </div>
+            </div>
+            {verifyPassword()}
 
-
-                        <button className="btn btn-primary my-5" value="add Item" type="submit"  > Registrate </button>
+                        <button className="btn btn-primary my-5" value="add Item" type="submit"  >{" "} Registrate{" "} </button>
                     </form>
                 </div>
-            </div>
-        </div >
-
-    )
-};
 
 export default FormProfessional;

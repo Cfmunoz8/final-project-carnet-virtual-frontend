@@ -6,6 +6,8 @@ import ProfileView from "../components/ProfileView";
 import PatientResume from "../components/PatientResume";
 import { CgProfile } from "react-icons/cg";
 import DrugList from "../components/DrugList";
+import Footer from "../components/Footer";
+
 
 function PatientHome() {
   return (
@@ -27,6 +29,7 @@ function PatientHome() {
           <DrugList />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
