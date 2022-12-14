@@ -5,14 +5,14 @@ import { useParams } from "react-router-dom";
 function Drugs() {
   const { store, actions } = useContext(Context);
   const [drugsAndPosology, setDrugsAndPosology] = useState();
+  const [list, setList] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
     actions.getDrugById(id);
-  }, []);
+  }, [list]);
 
   const onChange = (e) => {
-    console.log({ [e.target.name]: e.target.value });
     setDrugsAndPosology({
       clinical_record_id: id,
       ...drugsAndPosology,
@@ -22,26 +22,14 @@ function Drugs() {
 
   const submitDrug = (e) => {
     e.preventDefault();
-    actions.addDrug(drugsAndPosology);
+    actions.addDrug(drugsAndPosology, setList, list);
+    setDrugsAndPosology({ name: "" , posology: ""});
   };
 
   console.log("drugsAndPosology", drugsAndPosology);
-  console.log("succes?", store.successDrug);
-
-  const alert = () => {
-    if (store.successDrug == "success adding drug") {
-      <div className="alert alert-success" role="alert">
-        Medicamento agregado correctamente
-      </div>;
-    } else {
-      <div className="alert alert-danger" role="alert">
-        Complete todos los campos requeridos
-      </div>;
-    }
-  };
 
   return (
-    <div>
+    <div className="p-5">
       <div className="row pb-3">
         <div className="col mb-3">
           <div className="card">
@@ -74,6 +62,7 @@ function Drugs() {
               placeholder="Fármaco"
               name="name"
               onChange={(e) => onChange(e)}
+              value={drugsAndPosology?.name}
             />
             <input
               type="text"
@@ -82,12 +71,12 @@ function Drugs() {
               className="form-control"
               placeholder="Posología"
               onChange={(e) => onChange(e)}
+              value={drugsAndPosology?.posology}
             />
           </div>
           <button
             type="submit"
             className="btn btn-outline-secondary"
-            onClick={alert()}
           >
             Agregar
           </button>

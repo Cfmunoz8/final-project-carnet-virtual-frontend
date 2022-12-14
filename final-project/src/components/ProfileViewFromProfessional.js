@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/context";
+import NewClinicalRecordModal from "./NewClinicalRecordModal";
 
 
 function ProfileViewFromProfessional() {
@@ -51,6 +52,43 @@ function ProfileViewFromProfessional() {
             <p className="card-text text-center">
               Correo electrónico: {store.patient.email}
             </p>
+        </div>
+        <div className="card-footer text-center">
+          <button
+            type="button"
+            className="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#clinicalRecordModal"
+          >
+            Agregar Ficha Clínica
+          </button>
+          <div
+            className="modal fade"
+            id="clinicalRecordModal"
+            tabindex="-1"
+            aria-labelledby="clinicalRecordModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">
+                    Agregar Ficha Clínica
+                  </h1>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="modal-body">
+                  <NewClinicalRecordModal />
+                </div>
+                <div className="modal-footer"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

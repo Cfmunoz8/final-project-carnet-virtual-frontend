@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import ProfileView from "../components/ProfileView";
 import PatientResume from "../components/PatientResume";
 import { CgProfile } from "react-icons/cg";
+import Footer from "../components/Footer";
+
 
 function PatientHome() {
   const { store, actions } = useContext(Context);
@@ -27,10 +29,9 @@ function PatientHome() {
     <div>
       <Header />
       <Navbar
-        header="Bienvenido/a,"
+        header="Bienvenido/a "
         dropdown={<CgProfile />}
-        dropdownItem1="Mi Perfil"
-        dropdownLink1="/"
+
         dropdownItem2="Cerrar Sesión"
         dropdownLink2="/"
       />
@@ -79,6 +80,7 @@ function PatientHome() {
           />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
