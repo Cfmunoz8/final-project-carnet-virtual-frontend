@@ -6,11 +6,11 @@ function NavbarProfessional() {
 
 
   return (
-    <div className="navbar-professional">
+    <div className="navbar-professional border">
       <Navbar
         item1="Pacientes"
         link1="/patient-list"
-        header= "Bienvenido, nombre apellido"
+        header= "Bienvenido/a "
         dropdown= {<CgProfile />}
         dropdownItem1 = "Mi Perfil"
         dropdownLink1 = "/"

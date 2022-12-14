@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import ProfileView from "../components/ProfileView";
 import PatientResume from "../components/PatientResume";
 import { CgProfile } from "react-icons/cg";
+import Footer from "../components/Footer";
+
 
 function PatientBackground() {
   const { store, actions } = useContext(Context);
@@ -84,6 +86,7 @@ function PatientBackground() {
           />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
