@@ -4,7 +4,6 @@ import { Context } from "../store/context";
 import { useParams } from "react-router-dom";
 
 function Pathology() {
-
   const { store, actions } = useContext(Context);
 
   const [infoSurgeries, setInfoSuergeries] = useState();
@@ -22,26 +21,25 @@ function Pathology() {
     actions.getHabitById(id);
   }, [list]);
 
-
   const onChangePathology = (e) => {
     setInfoPathology({
       clinical_record_id: id,
       [e.target.name]: e.target.value,
     });
   };
-   const submitPathology = (e) => {
+
+  const submitPathology = (e) => {
     e.preventDefault();
     actions.addPathology(infoPathology, setList, list);
     setInfoPathology({ name: "" });
-    
-    
-    const onChangeSurgeries = (e) => {
+  };
+
+  const onChangeSurgeries = (e) => {
     setInfoSuergeries({
-    clinical_record_id: id,
+      clinical_record_id: id,
       [e.target.name]: e.target.value,
     });
-   };
-
+  };
 
   const submitSurgerie = (e) => {
     e.preventDefault();
@@ -76,13 +74,10 @@ function Pathology() {
   };
 
   return (
-
     <div className="container container-fluid mt-5 p-5 bg-light">
       <div className="row">
-
         <div className="col-6 mb-3">
           <div className="card mb-3" style={{ width: "24rem" }}>
-
             <div className="card-header">Patologias</div>
             {
               <ul className="card-body list-group list-group-flush ">
@@ -111,7 +106,6 @@ function Pathology() {
               Agregar Patología
             </button>
           </form>
-
         </div>
 
         <div className="col-6 mb-3">
@@ -212,7 +206,6 @@ function Pathology() {
         </div>
       </div>
     </div>
-
   );
 }
 
