@@ -20,6 +20,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
       habit: [],
       drug: [],
       successDrug: "",
+      File:[]
 
     },
     actions: {
@@ -34,7 +35,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
         };
         fetch(
 
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/login_patient",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/login_patient",
 
           postLogin
         )
@@ -54,7 +55,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .catch((error) => console.error("Error:", error));
       },
 
-      
+
       logout: (navigate) => {
         localStorage.removeItem("access_token")
         navigate("/")
@@ -64,7 +65,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
 
       getPathology: () => {
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/pathology"
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/pathology"
         )
           .then((response) => response.json())
           .then((data) => {
@@ -81,7 +82,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_pathology",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_pathology",
           addPathology
         )
 
@@ -99,7 +100,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/login_professional",postLogin
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/login_professional", postLogin
         )
           .then((res) => res.json())
           .then((result) => {
@@ -128,7 +129,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/patient_list",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/patient_list",
           getMethod
 
         )
@@ -147,8 +148,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-           "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/update_patient_alive/" +
-            id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/update_patient_alive/" +
+          id,
 
           putMethod
         )
@@ -169,7 +170,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/drugs",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/drugs",
           method
         )
           .then((response) => response.json())
@@ -189,7 +190,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_clinical_record",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_clinical_record",
           method
         )
 
@@ -210,7 +211,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_caregiver",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_caregiver",
           method
         )
 
@@ -231,7 +232,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_controls",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_controls",
           method
         )
           .then((response) => response.json())
@@ -253,7 +254,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/pathologies",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/pathologies",
           method
         )
           .then((response) => response.json())
@@ -274,7 +275,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/surgeries",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/surgeries",
           method
         )
 
@@ -295,7 +296,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/habits",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/habits",
           method
         )
 
@@ -315,7 +316,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/alergies",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/alergies",
           method
         )
           .then((response) => response.json())
@@ -323,8 +324,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
             setStore({ alergies: data });
           });
       },
-      
-    
+
+
 
       addDrug: (drugAndPosology) => {
         const postMethod = {
@@ -336,7 +337,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
         };
 
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_drug",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_drug",
           postMethod
         )
           .then((res) => res.json())
@@ -360,7 +361,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/professionals",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/professionals",
           getMethod
         )
           .then((response) => response.json())
@@ -379,18 +380,18 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/patient/" +
-            id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/patient/" +
+          id,
           getMethod
         )
           .then((response) => response.json())
           .then((data) => setStore({ patient: data }));
       },
 
-     
 
-          
-        addNewProfessional: (data) => {
+
+
+      addNewProfessional: (data) => {
         const addNewProfessional = {
           method: "POST",
           body: JSON.stringify(data),
@@ -398,16 +399,16 @@ export const getState = ({ getActions, getStore, setStore }) => {
             "Content-Type": "application/json",
           },
         };
-       return fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_professional", addNewProfessional)
+        return fetch(
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_professional", addNewProfessional)
           .then((res) => {
-           if (res.status === 201)
-           return res.json()
-          else 
-          return Promise.reject ("error")
+            if (res.status === 201)
+              return res.json()
+            else
+              return Promise.reject("error")
           })
 
-          .then((result) =>  setStore({ professionals: result }))
+          .then((result) => setStore({ professionals: result }))
       },
 
       addNewPatient: (data) => {
@@ -416,15 +417,15 @@ export const getState = ({ getActions, getStore, setStore }) => {
           body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json",
-           },
+          },
         };
-      fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_patient", addNewPatient)
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_patient", addNewPatient)
           .then((res) => res.json())
           .then((result) => setStore({ patients: result }))
       },
-          
-       getClinicalRecordById: (id) => {
+
+      getClinicalRecordById: (id) => {
         const token = localStorage.getItem("access_token");
         const method = {
           method: "GET",
@@ -434,8 +435,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_clinical_record/" +
-            id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_clinical_record/" +
+          id,
           method
         )
           .then((response) => response.json())
@@ -452,8 +453,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_caregiver_by_id/" +
-            id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_caregiver_by_id/" +
+          id,
           method
         )
           .then((response) => response.json())
@@ -472,8 +473,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_pathology_by_id/" +
-            clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_pathology_by_id/" +
+          clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -492,8 +493,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_surgery_by_id/" +
-            clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_surgery_by_id/" +
+          clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -512,8 +513,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_alergy_by_id/" +
-            clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_alergy_by_id/" +
+          clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -532,8 +533,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_habit_by_id/" +
-            clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_habit_by_id/" +
+          clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -552,8 +553,8 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/get_drug_by_id/" +
-            clinical_record_id,
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/get_drug_by_id/" +
+          clinical_record_id,
           method
         )
           .then((response) => response.json())
@@ -572,7 +573,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/create_control",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/create_control",
           postMethod
         )
           .then((res) => res.json())
@@ -591,7 +592,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
         };
 
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_drug",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_drug",
           postMethod
         )
           .then((res) => res.json())
@@ -604,7 +605,7 @@ export const getState = ({ getActions, getStore, setStore }) => {
           .catch((error) => console.error("Error:", error));
       },
 
-      addSurgeries: (infoSurgeries,setList,list) => {
+      addSurgeries: (infoSurgeries, setList, list) => {
         const addSurgery = {
           method: "POST",
           body: JSON.stringify(infoSurgeries),
@@ -613,58 +614,72 @@ export const getState = ({ getActions, getStore, setStore }) => {
           },
         };
         fetch(
-          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_surgery",
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_surgery",
           addSurgery
         )
-        .then((res) => res.json())
+          .then((res) => res.json())
           .then((result) => {
             console.log(result);
             setList(!list);
           })
           .catch((error) => console.error("Error:", error));
-        },
+      },
 
-        addHabit: (infoHabit,setList,list) => {
-          const addHabit = {
-            method: "POST",
-            body: JSON.stringify(infoHabit),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          };
-          fetch(
-            "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_habit",
-            addHabit
-          )
-          .then((res) => res.json())
-            .then((result) => {
-              console.log(result);
-              setList(!list);
-            })
-            .catch((error) => console.error("Error:", error));
+      addHabit: (infoHabit, setList, list) => {
+        const addHabit = {
+          method: "POST",
+          body: JSON.stringify(infoHabit),
+          headers: {
+            "Content-Type": "application/json",
           },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_habit",
+          addHabit
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            setList(!list);
+          })
+          .catch((error) => console.error("Error:", error));
+      },
 
-          addAlergy: (infoAlergy,setList,list) => {
-            const addAlergy = {
-              method: "POST",
-              body: JSON.stringify(infoAlergy),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            };
-            fetch(
-              "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us79.gitpod.io/add_alergy",
-              addAlergy
-            )
-            .then((res) => res.json())
-              .then((result) => {
-                console.log(result);
-                setList(!list);
-              })
-              .catch((error) => console.error("Error:", error));
-            },
+      addAlergy: (infoAlergy, setList, list) => {
+        const addAlergy = {
+          method: "POST",
+          body: JSON.stringify(infoAlergy),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/add_alergy",
+          addAlergy
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            setList(!list);
+          })
+          .catch((error) => console.error("Error:", error));
+      },
 
 
-    },
-  };
-};
+      addFile: (formData) => {
+        const addFile = { 
+          method: ("POST"),
+          body: formData,
+      };
+        fetch(
+          "https://8080-4geeksacademy-htmlhello-0axywpis0rh.ws-us78.gitpod.io/upload_image",
+        addFile)
+
+          .then((res) => res.json())
+            .then((data) => console.log(data))
+            .then((error) => console.log(error));
+
+      },
+    }
+  }
+}  

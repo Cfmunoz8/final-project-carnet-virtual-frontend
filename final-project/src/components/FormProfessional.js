@@ -8,51 +8,47 @@ import swal from "sweetalert";
 
 function FormProfessional() {
 
-    //const rut = "11.111.111-1"
-   // const rutToPass = rut.slice(0, -1) 
-    
-   // const confirmedDigit = getCheckDigit(rutToPass) 
-
-   // const rutvalidator = (e) => { validateRut([e.target.value])};
-
     const { store, actions } = useContext(Context);
-    const [infoRegister, setInfoRegister] = useState({name:"",lastname:"",rut:"",role:"",email:"",password:"",password2:""});
-    const [error,setError] = useState(false)
+    const [infoRegister, setInfoRegister] = useState({ name: "", lastname: "", rut: "", role: "", email: "", password: "", password2: "" });
+    const [error, setError] = useState(false);
+
 
     const onChange = (e) => {
-if (e.target.name=="rut"){
-  if  (e.target.value.length==9){
-    setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
-    setError(false)
-  } else {setError(true)}
 
-}      
+        if (e.target.name == "rut") {
+            if (e.target.value.length == 9) {
+                setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
+                setError(false)
+            } else { setError(true) }
+
+        }
         setInfoRegister({ ...infoRegister, [e.target.name]: e.target.value })
     }
     useEffect(() => { }, [infoRegister])
     const submitForm = (e) => {
         e.preventDefault()
-        
-        if (infoRegister.name=== ""){
-            swal("Error","Por favor complete todos los campos")
+
+        if (infoRegister.name === "") {
+            swal("Error", "Por favor complete todos los campos")
         }
-        if(infoRegister.lastname===""){
-            swal("Error","Por favor complete todos los campos")   
-        } 
-        if(infoRegister.rut===""){
-            swal("Error","Por favor complete todos los campos")   
-        } 
-        if(infoRegister.role===""){
-            swal("Error","Por favor complete todos los campos")   
-        } 
-        if(infoRegister.email===""){
-            swal("Error","Por favor complete todos los campos")   
-        } 
-        if(infoRegister.password===""){
-            swal("Error","Por favor complete todos los campos")   
-        } 
-        if(infoRegister.password2===""){
-            swal("Error","Por favor complete todos los campos")   
+        if (infoRegister.lastname === "") {
+            swal("Error", "Por favor complete todos los campos")
+        }
+        if (infoRegister.rut === "") {
+            swal("Error", "Por favor complete todos los campos")
+        }
+        if (infoRegister.role === "") {
+            swal("Error", "Por favor complete todos los campos")
+        }
+        if (infoRegister.email === "") {
+            swal("Error", "Por favor complete todos los campos")
+        }
+        if (infoRegister.password === "") {
+            swal("Error", "Por favor complete todos los campos")
+        }
+        if (infoRegister.password2 === "") {
+            swal("Error", "Por favor complete todos los campos")
+
         } else {
             actions.addNewProfessional(infoRegister)
             swal("Profesional creado exitosamente")
@@ -70,7 +66,7 @@ if (e.target.name=="rut"){
                     <form id="form" action="#" className="" onSubmit={submitForm}>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
-                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)}/>
+                            <input type="text" name="name" className="form-control" placeholder="Nombre" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1"><FaUserAlt /></span>
@@ -80,7 +76,7 @@ if (e.target.name=="rut"){
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Rut</span>
-                            <input type="text" name="rut" className={error?"text-danger form-control":"form-control"} placeholder="Ingrese su rut sin puntos ni guion" aria-label="number" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
+                            <input type="text" name="rut" className={error ? "text-danger form-control" : "form-control"} placeholder="Ingrese su rut sin puntos ni guion" aria-label="number" aria-describedby="basic-addon1" onChange={(e) => onChange(e)} />
                         </div>
                         <div className="input-group mb-3">
                             <span className="input-group-text" id="basic-addon1">Email</span>
@@ -122,6 +118,7 @@ if (e.target.name=="rut"){
                                 </div>
 
                             </div>
+
                         </div>
 
 
