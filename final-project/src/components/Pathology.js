@@ -40,7 +40,7 @@ function Pathology() {
     clinical_record_id: id,
       [e.target.name]: e.target.value,
     });
-   }:
+   };
 
 
   const submitSurgerie = (e) => {
@@ -209,7 +209,6 @@ function Pathology() {
               Agregar Hábito
             </button>
           </form>
-
         </div>
       </div>
     </div>
